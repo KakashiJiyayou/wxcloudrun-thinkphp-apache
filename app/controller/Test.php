@@ -28,7 +28,8 @@ class Test
 
     public function banner(){
         // return response(file_get_contents(dirname(dirname(__FILE__)).'/uploads/json/home/banner1.json'));
-        return response(file_get_contents(dirname(dirname(__FILE__)).'/view/banner1.json'));
+        return response(file_get_contents(dirname(dirname(__FILE__)).'/view/banner1.json')); 
+        
         // return response(file_get_contents(dirname(dirname(__FILE__)).'/view/index.html'));
     }
 }
