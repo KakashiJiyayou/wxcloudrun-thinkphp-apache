@@ -1,0 +1,34 @@
+{
+    "data":
+    [
+        {
+            "has_link"  :   "false",
+            "src"       :   "banner1.jpg",
+            "link"      :   ""
+        },
+
+        {
+            "has_link"  :   "false",
+            "src"       :   "banner1.jpg",
+            "link"      :   ""
+        },
+
+        {
+            "has_link"  :   "false",
+            "src"       :   "banner1.jpg",
+            "link"      :   ""
+        },
+
+        {
+            "has_link"  :   "false",
+            "src"       :   "banner1.jpg",
+            "link"      :   ""
+        },
+
+        {
+            "has_link"  :   "false",
+            "src"       :   "banner1.jpg",
+            "link"      :   ""
+        }
+    ]
+}
