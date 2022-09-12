@@ -9,25 +9,25 @@
 
         {
             "has_link"  :   "false",
-            "src"       :   "banner1.jpg",
+            "src"       :   "banner2.jpg",
             "link"      :   ""
         },
 
         {
             "has_link"  :   "false",
-            "src"       :   "banner1.jpg",
+            "src"       :   "banner3.jpg",
             "link"      :   ""
         },
 
         {
             "has_link"  :   "false",
-            "src"       :   "banner1.jpg",
+            "src"       :   "banner4.jpg",
             "link"      :   ""
         },
 
         {
             "has_link"  :   "false",
-            "src"       :   "banner1.jpg",
+            "src"       :   "banner5.jpg",
             "link"      :   ""
         }
     ]
