@@ -33,7 +33,7 @@ class Test
         // return response(file_get_contents(dirname(dirname(__FILE__)).'/view/index.html'));
     }
 
-    public function product(){
+    public function home_product(){
         return response(file_get_contents(dirname(dirname(__FILE__)).'../../public/uploads/json/product/product.json'));
     }
 }

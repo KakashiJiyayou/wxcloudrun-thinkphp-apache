@@ -17,3 +17,4 @@ Route::get('/api/count', 'index/getCount');
 Route::post('/api/count', 'index/updateCount');
 
 Route::get ("/api/get_banner",'test/banner');
+Route::get ("/api/get_home_product",'test/home_product');
