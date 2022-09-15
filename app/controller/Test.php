@@ -36,4 +36,9 @@ class Test
     public function home_product(){
         return response(file_get_contents(dirname(dirname(__FILE__)).'../../public/uploads/json/product/product.json'));
     }
+
+    public function home_brand(){
+        
+        return response(file_get_contents(dirname(dirname(__FILE__)).'../../public/uploads/json/product/brand_home.json'));
+    }
 }
