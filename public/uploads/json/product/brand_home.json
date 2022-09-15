@@ -2,6 +2,7 @@
     "data" : [
         {
             "brand_name" : "coco",
+            "short_into" :"Viva del lina",
             "brand_id" : "b1",
             "items" : 
             [
@@ -44,6 +45,7 @@
         },
         {
             "brand_name" : "coco",
+            "short_into" :"amos vamos inaque",
             "brand_id" : "b2",
             "items" : 
             [
