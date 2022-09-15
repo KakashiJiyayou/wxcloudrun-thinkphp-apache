@@ -1,0 +1,91 @@
+{
+    "data" : [
+        {
+            "brand_name" : "coco",
+            "brand_id" : "b1",
+            "items" : 
+            [
+                {
+                    "product_id" : "xxx2",
+                    "src" :"https://rider1-2156191-1312445728.ap-shanghai.run.tcloudbase.com/uploads/img/product/p1.jpg",
+                    "title": "organic",
+                    "desc": "It's a home made sweet delicacy that will make your mouth watery ",
+                    "price" : 50,
+                    "hot":true
+                },
+                {
+                    "product_id" : "xxx1",
+                    "src" :"https://rider1-2156191-1312445728.ap-shanghai.run.tcloudbase.com/uploads/img/product/p2.jpg",
+                    "title": "supreme",
+                    "desc": "It's a home made sweet delicacy that will make your mouth watery ",
+                    "price" : 50,
+                    "hot":true
+                },
+
+                {
+                    "product_id" : "xxx3",
+                    "src" :"https://rider1-2156191-1312445728.ap-shanghai.run.tcloudbase.com/uploads/img/product/p3.jpg",
+                    "title": "bitter cold",
+                    "desc": "It's a home made sweet delicacy that will make your mouth watery ",
+                    "price" : 50,
+                    "hot":true
+                },
+
+                {
+                    "product_id" : "xxx4",
+                    "src" :"https://rider1-2156191-1312445728.ap-shanghai.run.tcloudbase.com/uploads/img/product/p3.jpg",
+                    "title": "honey land",
+                    "desc": "It's a home made sweet delicacy that will make your mouth watery ",
+                    "price" : 50,
+                    "hot":true
+                }
+            ]
+
+        },
+        {
+            "brand_name" : "coco",
+            "brand_id" : "b2",
+            "items" : 
+            [
+                {
+                    "product_id" : "yy1",
+                    "src" :"https://rider1-2156191-1312445728.ap-shanghai.run.tcloudbase.com/uploads/img/product/p5.jpg",
+                    "title": "egg pulp",
+                    "desc": "It's a home made sweet delicacy that will make your mouth watery ",
+                    "price" : 50,
+                    "hot":true
+                },
+                {
+                    "product_id" : "yy2",
+                    "src" :"https://rider1-2156191-1312445728.ap-shanghai.run.tcloudbase.com/uploads/img/product/p4.jpg",
+                    "title": "radish nun",
+                    "desc": "It's a home made sweet delicacy that will make your mouth watery ",
+                    "price" : 50,
+                    "hot":true
+                },
+
+                {
+                    "product_id" : "yy3",
+                    "src" :"https://rider1-2156191-1312445728.ap-shanghai.run.tcloudbase.com/uploads/img/product/p1.jpg",
+                    "title": "traditional",
+                    "desc": "It's a home made sweet delicacy that will make your mouth watery ",
+                    "price" : 50,
+                    "hot":true
+                },
+
+                {
+                    "product_id" : "yy4",
+                    "src" :"https://rider1-2156191-1312445728.ap-shanghai.run.tcloudbase.com/uploads/img/product/p2.jpg",
+                    "title": "yakult",
+                    "desc": "It's a home made sweet delicacy that will make your mouth watery ",
+                    "price" : 50,
+                    "hot":true
+                }
+            ]
+
+        },
+        {
+
+        }
+    ]
+}
