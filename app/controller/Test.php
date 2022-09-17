@@ -55,12 +55,8 @@ class Test
         foreach($value->data as $index){
             if(isset($index->product_id)){
                 if(strcmp($index->product_id, $product_id)==0){
-                    // echo "<br>got match ";
-                    // var_dump( $index);
                     $data =$index;
-                    // return json($data);
                     header('Content-type: application/json');
-                    // header('Content-type: text/javascript');
                     echo json_encode( $data ,JSON_PRETTY_PRINT);
                     break;
                 }
