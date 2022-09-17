@@ -17,6 +17,11 @@ Route::get('/api/count', 'index/getCount');
 Route::post('/api/count', 'index/updateCount');
 
 Route::get ("/api/get_banner",'test/banner');
+
 Route::get ("/api/get_home_product",'test/home_product');
+
 Route::get ("/api/get_home_brand",'test/home_brand');
+
 Route::get ("/api/get_home_product_type",'test/home_product_type');
+
+Route::get ("/api/get_poduct_buy_sku/:product_id",'test/product_buy_sku');

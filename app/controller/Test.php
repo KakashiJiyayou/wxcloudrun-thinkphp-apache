@@ -44,4 +44,8 @@ class Test
     public function home_product_type(){
         return response(file_get_contents(dirname(dirname(__FILE__)).'../../public/uploads/json/product/type.json'));
     }
+
+    public function product_buy_sku($product_id){
+        return response(file_get_contents(dirname(dirname(__FILE__))."../../public/uploads/json/product_sku/$product_id.json"));
+    }
 }
