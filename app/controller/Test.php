@@ -48,4 +48,25 @@ class Test
     public function product_buy_sku($product_id){
         return response(file_get_contents(dirname(dirname(__FILE__))."../../public/uploads/json/product_sku/$product_id.json"));
     }
+
+    public function product_get_info($product_id){
+        $value = json_decode(file_get_contents(dirname(dirname(__FILE__))."../../public/uploads/json/product/product.json"));
+        // var_dump($value->data);
+        foreach($value->data as $index){
+            if(isset($index->product_id)){
+                if(strcmp($index->product_id, $product_id)==0){
+                    // echo "<br>got match ";
+                    // var_dump( $index);
+                    $data =$index;
+                    // return json($data);
+                    header('Content-type: application/json');
+                    // header('Content-type: text/javascript');
+                    echo json_encode( $data ,JSON_PRETTY_PRINT);
+                    break;
+                }
+            }
+        }
+
+
+    }
 }
