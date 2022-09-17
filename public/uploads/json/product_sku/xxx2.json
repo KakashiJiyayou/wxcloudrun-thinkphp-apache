@@ -3,7 +3,7 @@
     [
         {
             "k_s": 0,
-            "name": "test",
+            "name": "flavor",
             "values": [
               { "name": "sweet" },
               { "name": "salty" },
@@ -25,97 +25,43 @@
             "id": 1234,       
             "price": 20000,  
             "stock": 999999,  
-            "variants" : 
-            [
-                {
-                    "k_s" : 0,
-                    "value": "sweet"
-                },
-                {
-                    "k_s" : 1,
-                    "value": "small"
-                }
-            ]
+            "0": "sweet",
+            "1": "small"
         },
         {
             "id": 1234,
             "price": 10000,
             "stock": 999999,  
-            "variants" : 
-            [
-                {
-                    "k_s" : 0,
-                    "value": "salty"
-                },
-                {
-                    "k_s" : 1,
-                    "value": "small"
-                }
-            ]
+            "0": "salty",
+            "1": "small"
         },
         {
             "id": 1234,
             "price": 30000,
-            "stock": 999,  
-            "variants" : 
-            [
-                {
-                    "k_s" : 0,
-                    "value": "spicy"
-                },
-                {
-                    "k_s" : 1,
-                    "value": "small"
-                }
-            ]
+            "stock": 999,   
+            "0": "spicy",
+            "1": "small"
+        },
+        {
+            "id": 1234,
+            "price": 30056,
+            "stock": 999,   
+            "0": "sweet",
+            "1": "big"
+        },
+        {
+            "id": 1234,
+            "price": 30056,
+            "stock": 999,   
+            "0": "salty",
+            "1": "big"
         },
         {
             "id": 1234,
             "price": 30056,
             "stock": 999,  
-            "variants" : 
-            [
-                {
-                    "k_s" : 0,
-                    "value": "sweet"
-                },
-                {
-                    "k_s" : 1,
-                    "value": "big"
-                }
-            ]
-        },
-        {
-            "id": 1234,
-            "price": 30056,
-            "stock": 999,  
-            "variants" : 
-            [
-                {
-                    "k_s" : 0,
-                    "value": "salty"
-                },
-                {
-                    "k_s" : 1,
-                    "value": "big"
-                }
-            ]
-        },
-        {
-            "id": 1234,
-            "price": 30056,
-            "stock": 999,  
-            "variants" : 
-            [
-                {
-                    "k_s" : 0,
-                    "value": "spicy"
-                },
-                {
-                    "k_s" : 1,
-                    "value": "big"
-                }
-            ]
+            "0": "spicy",
+            "1": "big"
         }
       ],
       "skuPicture": "https://rider1-2156191-1312445728.ap-shanghai.run.tcloudbase.com/uploads/img/sku/xxx2/p2.jpg",
