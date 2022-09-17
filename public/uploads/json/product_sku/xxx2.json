@@ -1,0 +1,135 @@
+{
+    "skuTree":
+    [
+        {
+            "k_s": 0,
+            "name": "test",
+            "values": [
+              { "name": "sweet" },
+              { "name": "salty" },
+              { "name": "spicy" }
+            ]
+          },
+          {
+            "k_s": 1,
+            "name": "size",
+            "values": [
+              { "name": "small" },
+              { "name": "big" }
+            ]
+          }
+    ],
+    
+    "skuList": [
+        {
+            "id": 1234,       
+            "price": 20000,  
+            "stock": 999999,  
+            "variants" : 
+            [
+                {
+                    "k_s" : 0,
+                    "value": "sweet"
+                },
+                {
+                    "k_s" : 1,
+                    "value": "small"
+                }
+            ]
+        },
+        {
+            "id": 1234,
+            "price": 10000,
+            "stock": 999999,  
+            "variants" : 
+            [
+                {
+                    "k_s" : 0,
+                    "value": "salty"
+                },
+                {
+                    "k_s" : 1,
+                    "value": "small"
+                }
+            ]
+        },
+        {
+            "id": 1234,
+            "price": 30000,
+            "stock": 999,  
+            "variants" : 
+            [
+                {
+                    "k_s" : 0,
+                    "value": "spicy"
+                },
+                {
+                    "k_s" : 1,
+                    "value": "small"
+                }
+            ]
+        },
+        {
+            "id": 1234,
+            "price": 30056,
+            "stock": 999,  
+            "variants" : 
+            [
+                {
+                    "k_s" : 0,
+                    "value": "sweet"
+                },
+                {
+                    "k_s" : 1,
+                    "value": "big"
+                }
+            ]
+        },
+        {
+            "id": 1234,
+            "price": 30056,
+            "stock": 999,  
+            "variants" : 
+            [
+                {
+                    "k_s" : 0,
+                    "value": "salty"
+                },
+                {
+                    "k_s" : 1,
+                    "value": "big"
+                }
+            ]
+        },
+        {
+            "id": 1234,
+            "price": 30056,
+            "stock": 999,  
+            "variants" : 
+            [
+                {
+                    "k_s" : 0,
+                    "value": "spicy"
+                },
+                {
+                    "k_s" : 1,
+                    "value": "big"
+                }
+            ]
+        }
+      ],
+      "skuPicture": "https://rider1-2156191-1312445728.ap-shanghai.run.tcloudbase.com/uploads/img/sku/xxx2/p2.jpg",
+      "skuPrice": 2000,
+      "skuStock":999,
+      
+      "cover" :
+      [
+        {
+            "src" :"https://rider1-2156191-1312445728.ap-shanghai.run.tcloudbase.com/uploads/img/sku/xxx2/1.jpg"
+        },
+        {
+            "src" :"https://rider1-2156191-1312445728.ap-shanghai.run.tcloudbase.com/uploads/img/sku/xxx2/2.jpg"
+        }
+      ]
+    
+}
