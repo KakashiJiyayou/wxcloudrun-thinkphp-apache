@@ -49,6 +49,9 @@ class Test
         return response(file_get_contents(dirname(dirname(__FILE__))."../../public/uploads/json/product_sku/$product_id.json"));
     }
 
+
+
+    // this one is for getting a single product information
     public function product_get_info($product_id){
         $value = json_decode(file_get_contents(dirname(dirname(__FILE__))."../../public/uploads/json/product/product.json"));
         // var_dump($value->data);

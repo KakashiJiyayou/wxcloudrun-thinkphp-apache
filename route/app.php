@@ -27,3 +27,7 @@ Route::get ("/api/get_home_product_type",'test/home_product_type');
 Route::get ("/api/get_poduct_buy_sku/:product_id",'test/product_buy_sku');
 
 Route::get ("/api/get_product_info/:product_id",'test/product_get_info');
+
+Route::get("/api/get_user_login/:code", "login/get_code");
+
+Route::get("/api/get_user_id", "getid/get_code");
