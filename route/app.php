@@ -11,11 +11,13 @@
 use think\facade\Route;
 
 // 获取当前计数
-Route::get('/api/count', 'index/getCount');
+// Route::get('/api/count', 'index/getCount');
 
-// 更新计数，自增或者清零
-Route::post('/api/count', 'index/updateCount');
+// // 更新计数，自增或者清零
+// Route::post('/api/count', 'index/updateCount');
 
+
+//           //url path        //controller_name/function
 Route::get ("/api/get_banner",'test/banner');
 
 Route::get ("/api/get_home_product",'test/home_product');
