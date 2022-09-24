@@ -31,3 +31,13 @@ Route::get ("/api/get_product_info/:product_id",'test/product_get_info');
 Route::get("/api/get_user_login/:code", "login/get_code");
  
 Route::get("/api/get_user_id", "getid/get_code");
+
+
+// while passing values
+//  
+Route::get("/logouts/:user_id","logout/show");
+Route::get("/logout/user_id","logout/show2");
+
+
+// delete later
+Route::get("/logout", "logout/callme");
