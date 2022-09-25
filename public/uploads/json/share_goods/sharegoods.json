@@ -1,7 +1,5 @@
 {
     "data":[
-        
-
         {
             "user_id" : "Z1389xxx",
             "product_id" : "xxx2",
@@ -12,7 +10,16 @@
             "hot":true,
             "brand_name": "coco",
             "brand_id" :"b1",
-            "type" : "cake"
+            "type" : "cake",
+            "cover" :
+            [
+                {
+                    "src" :"https://rider1-2156191-1312445728.ap-shanghai.run.tcloudbase.com/uploads/img/sku/xxx2/1.jpg"
+                },
+                {
+                    "src" :"https://rider1-2156191-1312445728.ap-shanghai.run.tcloudbase.com/uploads/img/sku/xxx2/2.jpg"
+                }
+            ]
         }
 
        

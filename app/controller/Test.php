@@ -54,9 +54,11 @@ class Test
         return response(file_get_contents(dirname(dirname(__FILE__))."../../public/uploads/json/share_goods/sharegoods.json"));
     }
 
-
-
-    // this one is for getting a single product information
+    /**
+     * 
+     * @param get {product_id}
+     * @return {single product}
+     */
     public function product_get_info($product_id){
         $value = json_decode(file_get_contents(dirname(dirname(__FILE__))."../../public/uploads/json/product/product.json"));
         // var_dump($value->data);
@@ -70,7 +72,30 @@ class Test
                 }
             }
         }
+    }
 
 
+    /**
+     * 
+     * @param get {product_id}
+     * @param get {user_id}
+     * @return one {sharegoods object}
+     */
+    public function get_sharegoods_buy_info($product_id, $user_id){
+        $value = json_decode(file_get_contents(dirname(dirname(__FILE__))."../../public/uploads/json/share_goods/sharegoods.json"));
+        // var_dump($value->data);
+        foreach($value->data as $index){
+            if(isset($index->product_id) && isset($index->user_id)){
+                if( 
+                    strcmp( $index->product_id, $product_id )==0  && /*compare product id*/
+                    strcmp( $index->user_id,    $user_id) == 0    
+                ){
+                    $data =$index;
+                    header('Content-type: application/json');
+                    echo json_encode( $data ,JSON_PRETTY_PRINT);
+                    break;
+                }
+            }
+        }
     }
 }
