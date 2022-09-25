@@ -56,9 +56,9 @@ Route::get("/api/get_sharegoods_buy_info/:product_id/:user_id", 'test/get_shareg
  */
 // while passing values
 //  
-Route::get("/logouts/:user_id","logout/show");
-Route::get("/logout/user_id","logout/show2");
-Route::get("/dashboard/:user_name","dashboard/dashboard");
+Route::get("/logouts/:user_id",     "logout/show");
+Route::get("/logout/user_id",       "logout/show2");
+Route::get("/dashboard/:user_name", "dashboard/dashboard");
 // Route::get("dashboards/:user_name","dashboard/username");
 
 
