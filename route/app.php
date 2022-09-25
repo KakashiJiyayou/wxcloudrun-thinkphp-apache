@@ -35,6 +35,14 @@ Route::get("/api/get_user_login/:code", "login/get_code");
 Route::get("/api/get_user_id", "getid/get_code");
 
 
+//get share goods json file
+Route::get("/api/get_share_goods_jason","test/get_share_goods_json");
+
+
+
+
+
+
 // while passing values
 //  
 Route::get("/logouts/:user_id","logout/show");

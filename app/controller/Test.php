@@ -50,6 +50,11 @@ class Test
     }
 
 
+    public function get_share_goods_json(){
+        return response(file_get_contents(dirname(dirname(__FILE__))."../../public/uploads/json/share_goods/sharegoods.json"));
+    }
+
+
 
     // this one is for getting a single product information
     public function product_get_info($product_id){
