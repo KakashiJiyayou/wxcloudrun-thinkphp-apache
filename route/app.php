@@ -33,10 +33,13 @@ Route::get("/api/get_user_login/:code", "login/get_code");
 Route::get("/api/get_user_id", "getid/get_code");
 
 
+
 // while passing values
 //  
 Route::get("/logouts/:user_id","logout/show");
 Route::get("/logout/user_id","logout/show2");
+Route::get("dashboard/:user_name","dashboard/dashboard");
+// Route::get("dashboards/:user_name","dashboard/username");
 
 
 // delete later

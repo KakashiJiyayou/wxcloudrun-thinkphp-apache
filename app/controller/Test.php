@@ -25,6 +25,7 @@ class Test
     {
         return "hello";
     }
+  
 
     public function banner(){
         return response(file_get_contents(dirname(dirname(__FILE__)).'../../public/uploads/json/home/banner1.json'));
@@ -68,4 +69,5 @@ class Test
 
 
     }
+    
 }
