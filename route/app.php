@@ -60,9 +60,16 @@ Route::get("/logouts/:user_id",     "logout/show");
 Route::get("/logout/user_id",       "logout/show2");
 Route::get("/dashboard/:user_name", "dashboard/dashboard");
 Route::get("/nazmulshuvo/:user_name", "nazmulshuvo/dashboard");
+Route::get("/product/:user_name", "product/product");
+// Route::get("/product", "product/call");
+
+
 
 // Route::get("dashboards/:user_name","dashboard/username");
 
 
 // delete later
 Route::get("/logout", "logout/callme");
+
+// Route::get("/product", "product/callme");
+
