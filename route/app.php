@@ -41,7 +41,7 @@ Route::get("/api/get_share_goods_jason","test/get_share_goods_json");
 /**
  * section to get data , by giving a parameter
  */
-Route::get("/api/get_user_login/:code", "getcode/get_code");
+Route::get("/api/get_user_login", "getcode/get_code");
 
 Route::get ("/api/get_poduct_buy_sku/:product_id",'test/product_buy_sku');
 
