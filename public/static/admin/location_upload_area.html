@@ -37,23 +37,93 @@
                             </div>
                         </div>
 
-                        <div class="from_one">
-                        <label class="full-field">
-                            <span class="form-label">University name</span>
-                           </label>
-                           
-                        </div>
-                        <div class="address" >
-                        <select name="address" style="width: 500px;">
-                            <option value="volvo">GATE-01</option>
-                            <option value="saab">GATE-02</option>
-                            <option value="opel">GATE-03</option>
-                            <option value="audi">GATE-04</option>
-                          </select>
-                        </div>
 
-                          <button type="button" class="my-button">Save address</button>
-                      
+
+
+
+                        <style>
+                            * {
+                              box-sizing: border-box;
+                            }
+                            
+                            #myInput {
+                              background-image: url('/css/searchicon.png');
+                              background-position: 10px 12px;
+                              background-repeat: no-repeat;
+                              width: 48.5%;
+                              font-size: 16px;
+                              padding: 12px 20px 12px 40px;
+                              border: 1px solid #ddd;
+                              margin-bottom: 12px;
+                            }
+                            
+                            #myUL {
+                              list-style-type: none;
+                              padding: 0;
+                              margin: 0;
+                              width: 48.5%;
+                            }
+                            #myUL li a {
+                              border: 1px solid #ddd;
+                              margin-top: -1px; /* Prevent double borders */
+                              background-color: #f6f6f6;
+                              padding: 5px;
+                              text-decoration: none;
+                              font-size: 15px;
+                              color: black;
+                              display: block
+                            }
+                            
+                            </style>
+                            </head>
+                            <body>
+                            
+                            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="write your address" title="Type in a name">
+                            
+                            <ul id="myUL">
+                              <li><a href="#">AAA</a></li>
+                              <li><a href="#">BBB</a></li>
+                            
+                              <li><a href="#">CCC</a></li>
+                              <li><a href="#">DDD</a></li>
+                            </ul>
+                            
+                            <script>
+                            function myFunction() {
+                                var input, filter, ul, li, a, i, txtValue;
+                                input = document.getElementById("myInput");
+                                filter = input.value.toUpperCase();
+                                ul = document.getElementById("myUL");
+                                li = ul.getElementsByTagName("li");
+                                for (i = 0; i < li.length; i++) {
+                                    a = li[i].getElementsByTagName("a")[0];
+                                    txtValue = a.textContent || a.innerText;
+                                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                                        li[i].style.display = "";
+                                    } else {
+                                        li[i].style.display = "none";
+                                    }
+                                }
+                            }
+                            </script>
+
+
+
+
+
+
+
+
+
+
+                        
+
+
+
+                         
+                            
+                           
+                            
 
 
 
