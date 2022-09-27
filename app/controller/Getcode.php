@@ -13,12 +13,14 @@ class Getcode {
 
 
 	public function make_curl_call($url,$data){
+
+		echo " from curl ".$data;
 	
 		$ch = curl_init();
 		
-		curl_setopt($ch, CURLOPT_TIMEOUT, 30);
+		// curl_setopt($ch, CURLOPT_TIMEOUT, 30);
 		curl_setopt($ch, CURLOPT_URL, $url);
-		curl_setopt($ch, CURLOPT_POST, 1);
+		// curl_setopt($ch, CURLOPT_POST, 1);
 
 		$payload = json_encode( array( "openid"=> $data ) );
 		curl_setopt( $ch, CURLOPT_POSTFIELDS, $payload );
@@ -37,9 +39,11 @@ class Getcode {
 
     private function get_open($openid)
 	{
+		
+		echo "openid s". $openid;
 		$url = "http://api.weixin.qq.com/wxa/getopendata";
 		$data = $openid;
-		$data = $this->make_curl_call($url, $data);
+		$data = $this->make_curl_call($url, $openid);
 		return $data;
 
 	}
