@@ -36,7 +36,11 @@
                                         <div class="datatable-wrapper table-responsive">
                                             <table id="datatable"
                                                 class="display compact table table-striped table-bordered">
-                                                <caption class="btn-toolbar tableexport-caption" style="caption-side: top;"><button type="button" tableexport-id="5b144a9-xlsx" class="btn btn-default xlsx">Export to xlsx</button><button type="button" tableexport-id="11ac88c-csv" class="btn btn-default csv">Export to csv</button><button type="button" tableexport-id="20c9676-txt" class="btn btn-default txt">Export to txt</button></caption>
+                                                <caption class="btn-toolbar tableexport-caption" style="caption-side: top;">
+                                                    <!-- <button type="button" tableexport-id="5b144a9-xlsx" class="btn btn-default xlsx">Export to xlsx</button> -->
+                                                    <button onclick="download()" type="button" tableexport-id="5b144a9-xlsx" class="btn btn-default xlsx">Export csv file</button>
+                                                    <a href="#" tableexport-id="20c9676-txt" class="btn btn-default txt" type="button" id="save-link" >Export to txt</a>
+                                                </caption>
                                                 <thead>
                                                    
                                                     <tr>
@@ -306,3 +310,69 @@
 <script src="assets/js/app.js"></script>
 <!-- end container-fluid -->
                     <!-- end container-fluid -->
+                      <!-- csv  -->
+
+                      <script>
+
+                        const headRow = [...document.querySelectorAll('table thead tr td')]
+                            .map(column => column.textContent.trim());
+                        
+                        const rows = [...document.querySelectorAll('table tbody tr')]
+                            .map(tr => [...tr.querySelectorAll('td')]
+                                .map(td => td.textContent.trim())
+                            );
+                        
+                        const content = [headRow, ...rows]
+                            .map(row => row.map(str => '"' + (str ? str.replace(/"/g, '""') : '') + '"'))
+                            .map(row => row.join(','))
+                            .join('\n');
+                        
+                        const BOM = '\uFEFF'; // utf-8 byte-order-mark
+                        const csvBlob = new Blob([BOM + content], { type: 'text/csv;charset=utf-8' });
+                        
+                        function showCsv(){
+                            console.log(content);
+                        }
+                        
+                        function download(){
+                            if (window.navigator.msSaveOrOpenBlob) { 
+                                // IE hack; see http://msdn.microsoft.com/en-us/library/ie/hh779016.aspx
+                                navigator.msSaveBlob(csvBlob, 'dataTable.csv');
+                            } else {
+                                const objectUrl = URL.createObjectURL(csvBlob);
+                                const a = document.createElement('a');
+                                a.setAttribute('href', objectUrl);
+                                a.setAttribute('download', 'Table.csv');
+                        
+                                document.body.appendChild(a);
+                                a.click();
+                                document.body.removeChild(a);	
+                            }
+                        }
+                        
+                        </script>
+
+                        <!-- text download  -->
+                        <script>
+                            $('#save-link').click(function ()
+                          {
+                            var retContent = [];
+                            var retString = '';
+                            $('tbody tr').each(function (idx, elem)
+                            {
+                              var elemText = [];
+                              $(elem).children('td').each(function (childIdx, childElem)
+                              {
+                                elemText.push($(childElem).text());
+                              });
+                              retContent.push(`(${elemText.join(',')})`);
+                            });
+                            retString = retContent.join(',\r\n');
+                              var file = new Blob([retString], {type: 'text/plain'});
+                            var btn = $('#save-link');
+                            btn.attr("href", URL.createObjectURL(file));
+                            btn.prop("download", "data.txt");
+                          })
+                          
+                          
+                          </script>
