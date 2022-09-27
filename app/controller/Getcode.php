@@ -33,8 +33,11 @@ class Getcode {
 		return $res;
 	}
 
-    private function get_opendata()
+    private function get_opendata($openid)
 	{
+		$url = "http://api.weixin.qq.com/wxa/getopendata?openid=$openid";
+		$data = $this->make_curl_call($url);
+		return $data;
 
 	}
 
@@ -61,7 +64,9 @@ class Getcode {
 		// $data = json_decode($res,true);
 		// echo $data;
 
-		return $this->get_open_id();
+		$openid 		= $this->get_open_id();
+		$get_opendata	= $this->get_opendata($openid);
+		return $get_opendata;
 
 
     }
