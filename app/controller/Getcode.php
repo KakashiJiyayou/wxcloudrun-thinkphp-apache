@@ -64,8 +64,8 @@ class Getcode {
 		// echo $data;
 
 		// $openid 		= $this->get_open_id();
-		// $get_opendata	= $this->get_opendata($openid);
-		// return $get_opendata;
+		$get_opendata	= $this->get_opendata($openid);
+		return $get_opendata;
 
 
     }
