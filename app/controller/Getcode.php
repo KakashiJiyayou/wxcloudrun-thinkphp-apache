@@ -38,20 +38,33 @@ class Getcode {
 
 	}
 
-    public function get_code($code){
-        $appId = "wxa6d55e3e5cb2a024";
-        $secret = "a3ad5bb4723c70dc66ecbc33e38325d7";
-        // echo $code;
+	public function get_open_id()
+	{
+		
+		$head = getallheaders();
+        // $body = json_decode(file_get_contents('php://input'),true);
+        $openid = !empty($head['x-wx-openid']) ? $head['x-wx-openid'] : $head['X-WX-OPENID'];
+		return $openid;
+	}
 
-        $url = "https://api.weixin.qq.com/sns/jscode2session?appid=" . $appId . "&secret=" . $secret . "&js_code=" . $code . "&grant_type=authorization_code";
+    public function get_code($code){
+        // $appId = "wxa6d55e3e5cb2a024";
+        // $secret = "a3ad5bb4723c70dc66ecbc33e38325d7";
+        // // echo $code;
+
+        // $url = "https://api.weixin.qq.com/sns/jscode2session?appid=" . $appId . "&secret=" . $secret . "&js_code=" . $code . "&grant_type=authorization_code";
         
-		$get_opein_ID =  $this->make_curl_call($url);
-		return $get_opein_ID;
+		// $get_opein_ID =  $this->make_curl_call($url);
+		// return $get_opein_ID;
 		
 		//取出openid
 		// $data = json_decode($res,true);
 		// echo $data;
 
+		return $this->get_open_id();
+
 
     }
+
+	
 }
