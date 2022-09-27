@@ -39,12 +39,6 @@ class Getcode {
 
 	}
 
-	public function get_open_id()
-	{
-		
-		
-	}
-
     public function get_code(){
 		$head = getallheaders();
         $openid = !empty($head['x-wx-openid']) ? $head['x-wx-openid'] : $head['X-WX-OPENID'];
