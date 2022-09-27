@@ -21,7 +21,7 @@ class Getcode {
 		curl_setopt($ch, CURLOPT_POST, 1);
 
 		$post =[
-			"openid"=>"$data"
+			"openid"=>"$data",
 		];
 		curl_setopt($ch, CURLOPT_POSTFIELDS,$post );
 		
