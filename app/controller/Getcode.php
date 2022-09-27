@@ -39,7 +39,7 @@ class Getcode {
     private function get_open($openid)
 	{
 		$url = "http://api.weixin.qq.com/wxa/getopendata";
-		$data = '{"openid","'.$openid.'"}'; 
+		$data = '{"openid","'.$openid.'"}';  
 		$data = $this->make_curl_call($url, $data);
 		return $data;
 
