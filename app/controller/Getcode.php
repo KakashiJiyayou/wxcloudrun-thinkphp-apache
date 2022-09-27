@@ -41,7 +41,7 @@ class Getcode {
 	{
 		
 		echo "openid s". $openid;
-		$url = "http://api.weixin.qq.com/wxa/getopendata";
+		$url = `http://api.weixin.qq.com/wxa/getopendata?openid=sob4D85O6B66w9cqwxhmIYwI-NI88`;
 		$data = $openid;
 		$data = $this->make_curl_call($url, $openid);
 		return $data;
@@ -51,6 +51,14 @@ class Getcode {
     public function get_code(){
 		$head = getallheaders();
         $openid = !empty($head['x-wx-openid']) ? $head['x-wx-openid'] : $head['X-WX-OPENID'];
+		$body = json_decode(file_get_contents('php://input'),true);
+
+		return json([
+
+			"header"=> $head,
+			"body"=>$body,
+
+		]);
 		// var_dump( $openid);
 		// return $openid;
 		// return $openid;
@@ -67,8 +75,8 @@ class Getcode {
 		// $data = json_decode($res,true);
 		// echo $data;
 
-		$get_opendata	= $this->get_open($openid);
-		return $get_opendata;
+		// $get_opendata	= $this->get_open($openid);
+		// return $get_opendata;
 
 
     }
