@@ -22,7 +22,7 @@ class Getcode {
 		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST,FALSE);
 		curl_setopt($ch, CURLOPT_HEADER, FALSE);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
-		
+
 		//retun json data
 		$res = json_decode( curl_exec($ch));
 		curl_close($ch);
@@ -42,13 +42,13 @@ class Getcode {
 	public function get_open_id()
 	{
 		
-		$head = getallheaders();
-        // $body = json_decode(file_get_contents('php://input'),true);
-        $openid = !empty($head['x-wx-openid']) ? $head['x-wx-openid'] : $head['X-WX-OPENID'];
-		return $openid;
+		
 	}
 
     public function get_code($code){
+		$head = getallheaders();
+        $openid = !empty($head['x-wx-openid']) ? $head['x-wx-openid'] : $head['X-WX-OPENID'];
+		return $openid;
         // $appId = "wxa6d55e3e5cb2a024";
         // $secret = "a3ad5bb4723c70dc66ecbc33e38325d7";
         // // echo $code;
