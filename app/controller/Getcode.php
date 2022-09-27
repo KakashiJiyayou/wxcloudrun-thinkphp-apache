@@ -22,7 +22,10 @@ class Getcode {
 		curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
 		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER,FALSE);
 		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST,FALSE);
-		curl_setopt($ch, CURLOPT_HEADER, FALSE);
+		$headers = array(
+			"Content-Type: application/json",
+		 );
+		 curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
 
 		//retun json data
