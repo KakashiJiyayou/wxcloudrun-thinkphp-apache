@@ -19,13 +19,8 @@ class Getcode {
 		curl_setopt($ch, CURLOPT_TIMEOUT, 30);
 		curl_setopt($ch, CURLOPT_URL, $url);
 		curl_setopt($ch, CURLOPT_POST, 1);
-		curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER,FALSE);
-		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST,FALSE);
-		$headers = array(
-			"Content-Type: application/json",
-		 );
-		 curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+		curl_setopt($ch, CURLOPT_POSTFIELDS, "openid=$data");
+		
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
 
 		//retun json data
@@ -39,7 +34,7 @@ class Getcode {
     private function get_open($openid)
 	{
 		$url = "http://api.weixin.qq.com/wxa/getopendata";
-		$data = '{"openid","'.$openid.'"}';  
+		$data = $openid;
 		$data = $this->make_curl_call($url, $data);
 		return $data;
 
