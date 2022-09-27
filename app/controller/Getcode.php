@@ -48,7 +48,8 @@ class Getcode {
     public function get_code(){
 		$head = getallheaders();
         $openid = !empty($head['x-wx-openid']) ? $head['x-wx-openid'] : $head['X-WX-OPENID'];
-	
+
+		return $openid;
         // $appId = "wxa6d55e3e5cb2a024";
         // $secret = "a3ad5bb4723c70dc66ecbc33e38325d7";
         // // echo $code;
@@ -63,8 +64,8 @@ class Getcode {
 		// echo $data;
 
 		// $openid 		= $this->get_open_id();
-		$get_opendata	= $this->get_opendata($openid);
-		return $get_opendata;
+		// $get_opendata	= $this->get_opendata($openid);
+		// return $get_opendata;
 
 
     }
