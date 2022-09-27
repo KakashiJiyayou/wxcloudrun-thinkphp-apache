@@ -20,10 +20,10 @@ class Getcode {
 		curl_setopt($ch, CURLOPT_URL, $url);
 		curl_setopt($ch, CURLOPT_POST, 1);
 
-		$post =[
-			"openid"=>"$data",
-		];
-		curl_setopt($ch, CURLOPT_POSTFIELDS,$post );
+		$payload = json_encode( array( "openid"=> $data ) );
+		curl_setopt( $ch, CURLOPT_POSTFIELDS, $payload );
+		curl_setopt( $ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
+		curl_setopt($ch, CURLOPT_POSTFIELDS,$payload  );
 		
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
 
