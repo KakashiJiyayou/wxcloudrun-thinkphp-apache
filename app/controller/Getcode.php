@@ -24,7 +24,7 @@ class Getcode {
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
 
 		//retun json data
-		$res = json_decode( curl_exec($ch));
+		$res = curl_exec($ch);
 		curl_close($ch);
 		
 		
@@ -42,6 +42,7 @@ class Getcode {
     public function get_code(){
 		$head = getallheaders();
         $openid = !empty($head['x-wx-openid']) ? $head['x-wx-openid'] : $head['X-WX-OPENID'];
+		// var_dump( $openid);
 		// return $openid;
 		// return $openid;
         // $appId = "wxa6d55e3e5cb2a024";
