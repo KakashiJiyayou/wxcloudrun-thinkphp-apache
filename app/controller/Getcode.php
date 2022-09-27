@@ -62,7 +62,7 @@ class Getcode {
 		// $data = json_decode($res,true);
 		// echo $data;
 
-		$openid 		= $this->get_open_id();
+		// $openid 		= $this->get_open_id();
 		$get_opendata	= $this->get_opendata($openid);
 		return $get_opendata;
 
