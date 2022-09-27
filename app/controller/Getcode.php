@@ -11,15 +11,10 @@ use think\facade\Log;
 
 class Getcode {
 
-    
 
-    public function get_code($code){
-        $appId = "wxa6d55e3e5cb2a024";
-        $secret = "a3ad5bb4723c70dc66ecbc33e38325d7";
-        echo $code;
-
-        $url = 		$url = "https://api.weixin.qq.com/sns/jscode2session?appid=" . $appId . "&secret=" . $secret . "&js_code=" . $code . "&grant_type=authorization_code";
-        $ch = curl_init();
+	public function make_curl_call($url)
+	{
+		$ch = curl_init();
 		//设置超时
 		
 		curl_setopt($ch, CURLOPT_TIMEOUT, 30);
@@ -29,13 +24,34 @@ class Getcode {
 		curl_setopt($ch, CURLOPT_HEADER, FALSE);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
 		//运行curl，结果以jason形式返回
-		$res = curl_exec($ch);
+		$res = json_decode( curl_exec($ch));
 		curl_close($ch);
 		
-        echo $res;
+		if($res->openid != null)
+        	return  $res->openid ;
+		else 
+		return $res;
+	}
+
+    private function get_opendata()
+	{
+
+	}
+
+    public function get_code($code){
+        $appId = "wxa6d55e3e5cb2a024";
+        $secret = "a3ad5bb4723c70dc66ecbc33e38325d7";
+        // echo $code;
+
+        $url = "https://api.weixin.qq.com/sns/jscode2session?appid=" . $appId . "&secret=" . $secret . "&js_code=" . $code . "&grant_type=authorization_code";
+        
+		$get_opein_ID =  $this->make_curl_call($url);
+		return $get_opein_ID;
+		
 		//取出openid
-		$data = json_decode($res,true);
-		echo $data;
+		// $data = json_decode($res,true);
+		// echo $data;
+
 
     }
 }
