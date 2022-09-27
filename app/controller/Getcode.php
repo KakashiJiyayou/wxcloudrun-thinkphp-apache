@@ -12,13 +12,14 @@ use think\facade\Log;
 class Getcode {
 
 
-	public function make_curl_call($url)
-	{
+	public function make_curl_call($url,$data){
+	
 		$ch = curl_init();
 		
 		curl_setopt($ch, CURLOPT_TIMEOUT, 30);
 		curl_setopt($ch, CURLOPT_URL, $url);
 		curl_setopt($ch, CURLOPT_POST, 1);
+		curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
 		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER,FALSE);
 		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST,FALSE);
 		curl_setopt($ch, CURLOPT_HEADER, FALSE);
@@ -34,8 +35,9 @@ class Getcode {
 
     private function get_open($openid)
 	{
-		$url = "http://api.weixin.qq.com/wxa/getopendata?openid=$openid";
-		$data = $this->make_curl_call($url);
+		$url = "http://api.weixin.qq.com/wxa/getopendata";
+		$data = `{"openid",$openid}`; 
+		$data = $this->make_curl_call($url, $data);
 		return $data;
 
 	}
