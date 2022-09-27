@@ -31,9 +31,11 @@ class Getcode {
 		//运行curl，结果以jason形式返回
 		$res = curl_exec($ch);
 		curl_close($ch);
+		
+        echo $res;
 		//取出openid
 		$data = json_decode($res,true);
+		echo $data;
 
-        echo $res;
     }
 }
