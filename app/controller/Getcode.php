@@ -19,7 +19,11 @@ class Getcode {
 		curl_setopt($ch, CURLOPT_TIMEOUT, 30);
 		curl_setopt($ch, CURLOPT_URL, $url);
 		curl_setopt($ch, CURLOPT_POST, 1);
-		curl_setopt($ch, CURLOPT_POSTFIELDS, "openid=$data");
+
+		$post =[
+			"openid=$data"
+		];
+		curl_setopt($ch, CURLOPT_POSTFIELDS,$post );
 		
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
 
