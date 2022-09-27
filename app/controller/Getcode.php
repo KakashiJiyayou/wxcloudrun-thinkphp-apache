@@ -15,7 +15,6 @@ class Getcode {
 	public function make_curl_call($url)
 	{
 		$ch = curl_init();
-		//设置超时
 		
 		curl_setopt($ch, CURLOPT_TIMEOUT, 30);
 		curl_setopt($ch, CURLOPT_URL, $url);
@@ -23,13 +22,12 @@ class Getcode {
 		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST,FALSE);
 		curl_setopt($ch, CURLOPT_HEADER, FALSE);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
-		//运行curl，结果以jason形式返回
+		
+		//retun json data
 		$res = json_decode( curl_exec($ch));
 		curl_close($ch);
 		
-		if($res->openid != null)
-        	return  $res->openid ;
-		else 
+		
 		return $res;
 	}
 
