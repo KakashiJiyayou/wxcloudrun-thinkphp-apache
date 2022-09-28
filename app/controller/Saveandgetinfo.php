@@ -41,7 +41,7 @@ class Saveandgetinfo {
         $openid = !empty($head['x-wx-openid']) ? $head['x-wx-openid'] : $head['X-WX-OPENID'];
 		$body   = json_decode(file_get_contents('php://input'),true);
 
-        echo "openid".$openid ."". "body ".$body."";
+        // echo "openid".$openid ."". "body ".$body."";
 
 
         // returning values got from POST header and body part from USER MINI app
