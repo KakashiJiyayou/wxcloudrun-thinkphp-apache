@@ -13,5 +13,18 @@ class Practicedb
         return $value;
     }
 
+    public function save_data()
+    {
+        $data= 
+        [
+            "user_name" =>  "name",
+            "union_id"  =>  "openid",
+            "avatar"    =>  "avatarUrl"
+        ];
+        $rs=Db::name('userinfo')->save($data);
+
+        return json(['code'=>200,'data'=>$rs]);
+    }
+
 
 }
