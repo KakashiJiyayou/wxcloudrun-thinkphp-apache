@@ -37,22 +37,22 @@ class Saveandgetinfo {
      */
     public function save_information()
     {
-        $head   = getallheaders();
-        $openid = !empty($head['x-wx-openid']) ? $head['x-wx-openid'] : $head['X-WX-OPENID'];
-		$body   = json_decode(file_get_contents('php://input'),true);
+        // $head   = getallheaders();
+        // $openid = !empty($head['x-wx-openid']) ? $head['x-wx-openid'] : $head['X-WX-OPENID'];
+		// $body   = json_decode(file_get_contents('php://input'),true);
 
         // echo "openid".$openid ."". "body ".$body."";
 
 
         // returning values got from POST header and body part from USER MINI app
-		return json([
-			"openid"=> $openid ,
-			"body"=> $body,
-		]);
+		// return json([
+		// 	"openid"=> $openid ,
+		// 	"body"=> $body,
+		// ]);
 
 
-        // $post_data  =   $this->get_header_body() ;
-        // return $post_data;
+        $post_data  =   $this->get_header_body() ;
+        return $post_data;
         // $openid     =   $post_data["openid"];
 
         // // if values already exists it will give greater than '0' value
