@@ -24,7 +24,7 @@ class Saveandgetinfo {
         // returning values got from POST header and body part from USER MINI app
 		return json([
 			"openid"=> "ob4D85O6B66w9cqwxhmIYwI-NI88",
-			"body"=>$body,
+			"body"=> $body->userinfo,
 		]);
     }
 
@@ -34,8 +34,8 @@ class Saveandgetinfo {
      */
     public function save_information()
     {
-        $post_data  =   $this->get_header_body();
-        $openid     =   $post_data->openid;
+        $post_data  =   $this->get_header_body() ;
+        $openid     =   $post_data["openid"];
 
         // if values already exists it will give greater than '0' value
         $value      =   DB::table("userinfo")->where("union_id",$openid)->count();
