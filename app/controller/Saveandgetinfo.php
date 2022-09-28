@@ -53,8 +53,7 @@ class Saveandgetinfo {
 
         if($value>0)
         {
-            return "already has value";
-            
+            return json(["data"=>"already has value"]);
         }
         else
         {
@@ -71,9 +70,9 @@ class Saveandgetinfo {
     {
         $data= 
         [
-            "user_name" =>  "name",
-            "union_id"  =>  "openid",
-            "avatar"    =>  "avatarUrl"
+            "user_name" =>  $body["name"],
+            "union_id"  =>  $openid,
+            "avatar"    =>  $body["avatarUrl"]
         ];
         $rs=Db::name('userinfo')->save($data);
 
