@@ -24,9 +24,9 @@ return [
             // 数据库类型
             'type' => 'mysql',
             // 服务器地址
-            'hostname' => "10.0.224.16",
+            'hostname' => "sh-cynosdbmysql-grp-ing34sri.sql.tencentcdb.com",
             // 服务器端口
-            'hostport' =>  '3306',
+            'hostport' =>  '26327',
             // 用户名
             'username' => "tester",
             // 密码
