@@ -51,22 +51,22 @@ class Saveandgetinfo {
 		]);
 
 
-        $post_data  =   $this->get_header_body() ;
-        return $post_data;
-        $openid     =   $post_data["openid"];
+        // $post_data  =   $this->get_header_body() ;
+        // return $post_data;
+        // $openid     =   $post_data["openid"];
 
-        // if values already exists it will give greater than '0' value
-        $value      =   DB::table("userinfo")->where("union_id",$openid)->count();
+        // // if values already exists it will give greater than '0' value
+        // $value      =   DB::table("userinfo")->where("union_id",$openid)->count();
 
 
-        if($value>0)
-        {
+        // if($value>0)
+        // {
             
-        }
-        else
-        {
-            $this->create_new_user($openid, $post_data["body"]);
-        }
+        // }
+        // else
+        // {
+        //     $this->create_new_user($openid, $post_data["body"]);
+        // }
         
     }
 
