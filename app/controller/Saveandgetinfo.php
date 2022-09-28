@@ -23,7 +23,7 @@ class Saveandgetinfo {
 
         // returning values got from POST header and body part from USER MINI app
 		return json([
-			"openid"=> $openid,
+			"openid"=> "ob4D85O6B66w9cqwxhmIYwI-NI88",
 			"body"=>$body,
 		]);
     }
