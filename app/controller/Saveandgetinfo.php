@@ -35,6 +35,7 @@ class Saveandgetinfo {
     public function save_information()
     {
         $post_data  =   $this->get_header_body() ;
+        return $post_data;
         $openid     =   $post_data["openid"];
 
         // if values already exists it will give greater than '0' value
