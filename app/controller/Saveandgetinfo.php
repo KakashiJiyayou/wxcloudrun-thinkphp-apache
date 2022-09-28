@@ -15,30 +15,37 @@ class Saveandgetinfo {
     /**
      * helps to get the post header and data body
      */
-    public function get_header_body()
+    public function get_openid()
     {
         $head   = getallheaders();
         $openid = !empty($head['x-wx-openid']) ? $head['x-wx-openid'] : $head['X-WX-OPENID'];
-		$body   = json_decode(file_get_contents('php://input'),true);
-
-
         // returning values got from POST header and body part from USER MINI app
-		return json([
-			"openid"=> "ob4D85O6B66w9cqwxhmIYwI-NI88",
-			"body"=> $body["userinfo"],
-		]);
+		return $openid;
+    }
+
+    /**
+     * get body
+     */
+    public function get_body()
+    {
+        $body   = json_decode(file_get_contents('php://input'),true);
+        return $body;
     }
 
 
     /**
      * function to save user information
      */
-    public function save_information()
+    public function save_user_information()
     {
 
-        $post_data =  json(  $this->get_header_body() );
-        // return $post_data;
-        $openid     =   $post_data->openid;
+        $openid = $this->get_openid() ;
+        $data   = $this->get_body()["userinfo"];
+    
+        return json([
+            	"openid"=> $openid ,
+            	"body"=> $data,
+            ]);
 
         // // // if values already exists it will give greater than '0' value
         // $value      =   DB::table("userinfo")->where("union_id",$openid)->count();
