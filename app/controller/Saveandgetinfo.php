@@ -53,6 +53,7 @@ class Saveandgetinfo {
 
         if($value>0)
         {
+            return "already has value";
             
         }
         else
