@@ -42,14 +42,15 @@ class Saveandgetinfo {
         $openid = $this->get_openid() ;
         $data   = $this->get_body()["userinfo"];
     
-        return json([
-            	"openid"=> $openid ,
-            	"body"=> $data,
-            ]);
+        // return json([
+        //     	"openid"=> $openid ,
+        //     	"body"=> $data,
+        //     ]);
 
         // // // if values already exists it will give greater than '0' value
-        // $value      =   DB::table("userinfo")->where("union_id",$openid)->count();
+        $value      =   DB::table("userinfo")->where("union_id",$openid)->count();
 
+        return $value;
 
 
         // if($value>0)
