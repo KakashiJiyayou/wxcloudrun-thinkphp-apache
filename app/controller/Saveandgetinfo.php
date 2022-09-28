@@ -36,7 +36,7 @@ class Saveandgetinfo {
     public function save_information()
     {
 
-        $post_data =    $this->get_header_body() ;
+        $post_data =  json(  $this->get_header_body() );
         // return $post_data;
         $openid     =   $post_data->openid;
 
