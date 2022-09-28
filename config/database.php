@@ -24,9 +24,9 @@ return [
             // 数据库类型
             'type' => 'mysql',
             // 服务器地址
-            'hostname' => "127.0.0.1",
+            'hostname' => "10.0.224.16",
             // 服务器端口
-            'hostport' =>  '',
+            'hostport' =>  '3306',
             // 用户名
             'username' => "tester",
             // 密码
