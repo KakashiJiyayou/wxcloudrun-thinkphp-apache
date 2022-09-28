@@ -50,17 +50,15 @@ class Saveandgetinfo {
         // // // if values already exists it will give greater than '0' value
         $value      =   DB::table("userinfo")->where("union_id",$openid)->count();
 
-        return $value;
 
-
-        // if($value>0)
-        // {
+        if($value>0)
+        {
             
-        // }
-        // else
-        // {
-        //     $this->create_new_user($openid, $post_data[1]->body);
-        // }
+        }
+        else
+        {
+            $this->create_new_user($openid, $data);
+        }
         
     }
 
