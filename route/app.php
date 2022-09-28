@@ -58,7 +58,7 @@ Route::get("/api/get_sharegoods_buy_info/:product_id/:user_id", 'test/get_shareg
 
 // save user information
 // if user does not exits it will create new user
-Route::post("api/save/userinformation", "saveandgetinfo/save_information");
+Route::post("/api/save/userinformation", "saveandgetinfo/save_information");
 
 
 
