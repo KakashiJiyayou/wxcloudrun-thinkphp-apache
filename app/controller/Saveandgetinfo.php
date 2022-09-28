@@ -70,9 +70,9 @@ class Saveandgetinfo {
     {
         $data= 
         [
-            "user_name" =>  $body->name,
+            "user_name" =>  $body["name"],
             "union_id"  =>  $openid,
-            "avatar"    =>  $body->avatarUrl
+            "avatar"    =>  $body["avatarUrl"]
         ];
         $rs=Db::name('userinfo')->save($data);
 
