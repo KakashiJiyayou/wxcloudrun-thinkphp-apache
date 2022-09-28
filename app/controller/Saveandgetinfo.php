@@ -36,14 +36,13 @@ class Saveandgetinfo {
     public function save_information()
     {
 
-        $post_data  =   $this->get_header_body() ;
-        // return $post_data;
-        $openid     =   $post_data[0]->openid;
+        $post_data =    $this->get_header_body() ;
+        return $post_data;
+        // $openid     =   $post_data->openid;
 
-        // // if values already exists it will give greater than '0' value
-        $value      =   DB::table("userinfo")->where("union_id",$openid)->count();
+        // // // if values already exists it will give greater than '0' value
+        // $value      =   DB::table("userinfo")->where("union_id",$openid)->count();
 
-        return $value;
 
 
         // if($value>0)
@@ -52,7 +51,7 @@ class Saveandgetinfo {
         // }
         // else
         // {
-        //     $this->create_new_user($openid, $post_data["body"]);
+        //     $this->create_new_user($openid, $post_data[1]->body);
         // }
         
     }
