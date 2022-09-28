@@ -57,7 +57,7 @@ class Saveandgetinfo {
         }
         else
         {
-            $this->create_new_user($openid, $data);
+           return  $this->create_new_user($openid, $data);
         }
         
     }
