@@ -65,6 +65,7 @@ Route::post("/api/save/userinformation", "saveandgetinfo/save_user_information")
 // practice
 Route::get("/api/get/query/simple/db/query", "practicedb/query_data");
 Route::get("/api/save", "practicedb/save_data");
+Route::get("/api/do/crud", "practicedb/simple_crud");
 /************************************************************** *
                     DATABASE                
 *************************************************************** */

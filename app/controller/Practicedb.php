@@ -26,5 +26,41 @@ class Practicedb
         return json(['code'=>200,'data'=>$rs]);
     }
 
+    public function simple_crud()
+    {
+        $data= 
+        [
+            "user_name" =>  "name",
+            "union_id"  =>  "testing usinio ID 1",
+            "avatar"    =>  "avatarUrl"
+        ];
+
+         $res = DB::name("userinfo")->insert($data);
+         printf("add data ". $res);
+
+         $res = DB::name("userinfo")->select();
+         printf("query data ".$res);
+
+         $res = DB::name("userinfo")
+                ->where("union_id", "testing usinio ID 1")
+                ->update([
+                    "union_id"  =>  "xxx56",
+                    "avatar"    =>  "avatarUrl"]);
+
+        $res = DB::name("userinfo")->select();
+        printf("query data ".$res);
+
+        $res = Db::table('userinfo')
+                ->where('union_id','xxx56')->delete();
+        printf("delete data ".$res);
+
+        $res = DB::name("userinfo")->select();
+        printf("query data ".$res);
+
+
+
+
+    }
+
 
 }
