@@ -1,14 +1,25 @@
+<link rel="stylesheet" href="/static/admin/assets/css/tag_style.css">
+
+<link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/thinline.css">
+
+
 <div class="product_upload">
 
   <form action="">
     <div class="title_box">
-      <h3 class="title">Title</h3>
+      <h3 class="title">Product Name</h3>
       <input class="title_input" type="text" placeholder="title">
+      <h3 class="title">Product Price</h3>
+      <input class="title_input" type="number" step="0.01" placeholder="price">
       <h3 class="title">Description</h3>
       <textarea class="textarea" name="" id="" placeholder="description"></textarea>
+
     </div>
+
+    
+
     <div class="media_box">
-      <h3 class="title">Media</h3>
+      <h3 class="title">Product photos</h3>
       <!-- drag and drop start  -->
       <form class="form">
         <label class="form__container" id="upload-container">Choose or Drag & Drop Files
@@ -19,162 +30,48 @@
       <!-- drag and drop end -->
 
     </div>
-
     <!-- options box start  -->
     <div class="options_box">
       <h3 class="title">Options</h3>
-
       <hr />
-
-      <!-- valuebox start  -->
-      <div class="value_box">
-        <!-- color start  -->
-        <div class="options">
-          <!-- picker start  -->
-          <div class="picker">
-            <h4>color</h4>
-            <div class="choice">
-              <h6>red</h6>
-              <h6>blue</h6>
-              <h6>green</h6>
-            </div>
-            <!-- pop up start  -->
-            <div id="popup_item" class="hover_item">
-              <h3 class="title">Option Name</h3>
-              <div class="flex_input">
-                <input class="option_input" type="text" placeholder="Color">
-                <i class="far va fa-trash-alt"></i>
-              </div>
-              <h3 class="title">Option Values</h3>
-              <div class="flex_input">
-                <input class="title_input" type="text" placeholder="red">
-                <i class="far va fa-trash-alt"></i>
-              </div>
-              <div class="flex_input">
-                <input class="title_input" type="text" placeholder="blue">
-                <i class="far va fa-trash-alt"></i>
-              </div>
-              <div class="flex_input">
-                <input class="title_input" type="text" placeholder="green">
-                <i class="far va fa-trash-alt"></i>
-              </div>
-              <div class="flex_input">
-                <input class="title_input" type="text" placeholder="Add Another Value">
-                <i class="far va fa-trash-alt"></i>
-              </div>
-
-              <span class="close1">Done</span>
-            </div>
-            <!-- pop up end  -->
-          </div>
-          <!-- picker end  -->
-          <div id="mybtn" class="edit_btn1">edit</div>
+      <!-- variant option -->
+      <div class="wrapper1">
+        <div class="title">
+          <h2>Option1</h2>
         </div>
-        <!-- color end  -->
-
-
-        <hr />
-        <!-- size start  -->
-        <div class="options">
-          <!-- picker start  -->
-          <div class="picker">
-            <h4>Size</h4>
-            <div class="choice">
-              <h6>large</h6>
-              <h6>Small</h6>
-              <h6>Medium</h6>
-            </div>
-            <!-- pop up start  -->
-            <div id="popup_item_one" class="hover_item">
-              <h3 class="title">Option Name</h3>
-              <div class="flex_input">
-                <input class="option_input" type="text" placeholder="Size">
-                <i class="far va fa-trash-alt"></i>
-              </div>
-              <h3 class="title">Option Values</h3>
-              <div class="flex_input">
-                <input class="title_input" type="text" placeholder="large">
-                <i class="far va fa-trash-alt"></i>
-              </div>
-              <div class="flex_input">
-                <input class="title_input" type="text" placeholder="Medium">
-                <i class="far va fa-trash-alt"></i>
-              </div>
-              <div class="flex_input">
-                <input class="title_input" type="text" placeholder="Small">
-                <i class="far va fa-trash-alt"></i>
-              </div>
-              <div class="flex_input">
-                <input class="title_input" type="text" placeholder="Add Another Value">
-                <i class="far va fa-trash-alt"></i>
-              </div>
-
-
-
-              <span class="close_two">Done</span>
-            </div>
-
-            <!-- pop up end  -->
-
-          </div>
-
-          <!-- picker end  -->
-          <div id="mybtnone" class="edit_btn1">edit</div>
-
-
-
+        <div class="content">
+          <ul id="tag_input1"><input type="text" spellcheck="false"></ul>
         </div>
-        <!-- size end  -->
-        <hr />
-        <div class="options">
-          <!-- picker start  -->
-
-          <div class="picker">
-
-            <h2 style="cursor: pointer;" id="mybtn_two">+Add another option</h2>
-
-            <!-- pop up start  -->
-            <div id="popup_item_two" class="hover_item">
-              <h3 class="title">Option Name</h3>
-              <div class="flex_input">
-                <input class="option_input" type="text" placeholder="Size">
-                <i class="far va fa-trash-alt"></i>
-              </div>
-              <h3 class="title">Option Values</h3>
-              <div class="flex_input">
-                <input class="title_input" type="text" placeholder="large">
-                <i class="far va fa-trash-alt"></i>
-              </div>
-              <div class="flex_input">
-                <input class="title_input" type="text" placeholder="Medium">
-                <i class="far va fa-trash-alt"></i>
-              </div>
-              <div class="flex_input">
-                <input class="title_input" type="text" placeholder="Small">
-                <i class="far va fa-trash-alt"></i>
-              </div>
-              <div class="flex_input">
-                <input class="title_input" type="text" placeholder="Add Another Value">
-                <i class="far va fa-trash-alt"></i>
-              </div>
-
-
-              <span class="close_three">Done</span>
-
-            </div>
-
-            <!-- pop up end  -->
-
-
-          </div>
-          <!-- picker end  -->
+        <div class="details">
+          <p><span>5</span> tags are remaining</p>
         </div>
-
-
       </div>
-      <!-- valuebox end  -->
+      <div class="wrapper2">
+        <div class="title">
+          <h2>Option 2</h2>
+        </div>
+        <div class="content">
+          <ul id="tag_input2"><input type="text" spellcheck="false"></ul>
+        </div>
+        <div class="details">
+          <p><span>5</span> tags are remaining</p>
+        </div>
+      </div>
 
+      <div class="wrapper3">
+        <div class="title">
+          <h2>Option 3</h2>
+        </div>
+        <div class="content">
+          <ul id="tag_input3"><input type="text" spellcheck="false"></ul>
+        </div>
+        <div class="details">
+          <p><span>5</span> tags are remaining</p>
+        </div>
+      </div>
+      <!-- variant options end-->
     </div>
+
     <!-- options box end  -->
     <!-- variant box start  -->
     <div class="variant_box">
@@ -187,94 +84,12 @@
             <td><input type="checkbox"></td>
             <th>Variant</th>
             <th>Price</th>
-            <th>Action</th>
-            <th>Action</th>
           </tr>
 
           <tr>
             <td><input type="checkbox"></td>
             <td> pizza/small</td>
             <td><input class="input" type="text" placeholder="CNY"></td>
-            <td>
-              <div class="edit">edit</div>
-
-            </td>
-            <td><i class="far fa-trash-alt"></i></td>
-          </tr>
-
-          <tr>
-            <td><input type="checkbox"></td>
-            <td> pizza/small</td>
-            <td><input class="input" type="text" placeholder="CNY"></td>
-            <td>
-              <div class="edit">edit</div>
-            </td>
-            <td><i class="far fa-trash-alt"></i></td>
-          </tr>
-
-          <tr>
-            <td><input type="checkbox"></td>
-            <td> pizza/small</td>
-            <td><input class="input" type="text" placeholder="CNY"></td>
-            <td>
-              <div class="edit">edit</div>
-            </td>
-            <td><i class="far fa-trash-alt"></i></td>
-          </tr>
-
-          <tr>
-            <td><input type="checkbox"></td>
-            <td> pizza/small</td>
-            <td><input class="input" type="text" placeholder="CNY"></td>
-            <td>
-              <div class="edit">edit</div>
-
-            </td>
-            <td><i class="far fa-trash-alt"></i></td>
-          </tr>
-
-          <tr>
-            <td><input type="checkbox"></td>
-            <td> pizza/small</td>
-            <td><input class="input" type="text" placeholder="CNY"></td>
-            <td>
-              <div class="edit">edit</div>
-
-            </td>
-            <td><i class="far fa-trash-alt"></i></td>
-          </tr>
-
-          <tr>
-            <td><input type="checkbox"></td>
-            <td> pizza/small</td>
-            <td><input class="input" type="text" placeholder="CNY"></td>
-            <td>
-              <div class="edit">edit</div>
-
-            </td>
-            <td><i class="far fa-trash-alt"></i></td>
-          </tr>
-
-          <tr>
-            <td><input type="checkbox"></td>
-            <td> pizza/small</td>
-            <td><input class="input" type="text" placeholder="CNY"></td>
-            <td>
-              <div class="edit">edit</div>
-
-            </td>
-            <td><i class="far fa-trash-alt"></i></td>
-          </tr>
-
-          <tr>
-            <td><input type="checkbox"></td>
-            <td> pizza/small</td>
-            <td><input class="input" type="text" placeholder="CNY"></td>
-            <td>
-              <div class="edit">edit</div>
-
-            </td>
-            <td><i class="far fa-trash-alt"></i></td>
           </tr>
 
         </table>
@@ -284,13 +99,238 @@
 
 
   </form>
-</div>
-<!-- end row -->
-<!-- plugins -->
-<script src="assets/js/vendors.js"></script>
 
-<!-- custom app -->
-<script src="assets/js/app.js"></script>
+
+
+
+</div>
+
+
+
+
+
+<script>
+  UL_1 = document.querySelector(".wrapper1 ul#tag_input1");
+  INPUT_1 = document.querySelector("ul#tag_input1 input");
+  tagNumb_1 = document.querySelector(".wrapper1 .details span");
+
+
+  UL_2 = document.querySelector("ul#tag_input2");
+  INPUT_2 = document.querySelector("ul#tag_input2 input");
+  tagNumb_2 = document.querySelector(".wrapper2 .details span");
+
+  UL_3 = document.querySelector("ul#tag_input3");
+  INPUT_3 = document.querySelector("ul#tag_input3 input");
+  tagNumb_3 = document.querySelector(".wrapper3 .details span");
+
+  maxTags = 5;
+  tags1 = [];
+  tags2 = [];
+  tags3 = [];
+
+  
+
+  function countTags() {
+    INPUT_1;
+    tagNumb_1.innerText = maxTags - tags1.length;
+
+    INPUT_2;
+    tagNumb_2.innerText = maxTags - tags2.length;
+
+    INPUT_3;
+    tagNumb_3.innerText = maxTags - tags3.length;
+
+    console.log("tags1 ", tags1);
+    console.log("tags2 ", tags2);
+    console.log("tags3 ", tags3);
+    show_json_data();
+  }
+
+  function createTag() {
+    UL_1.querySelectorAll("li").forEach(li => li.remove());
+    tags1.slice().reverse().forEach(tag => {
+      let liTag = `<li>${tag} <i class="uit uit-multiply" onclick="remove1(this, '${tag}')"></i></li>`;
+      UL_1.insertAdjacentHTML("afterbegin", liTag);
+    });
+
+
+    UL_2.querySelectorAll("li").forEach(li => li.remove());
+    tags2.slice().reverse().forEach(tag => {
+      let liTag = `<li>${tag} <i class="uit uit-multiply" onclick="remove2(this, '${tag}')"></i></li>`;
+      UL_2.insertAdjacentHTML("afterbegin", liTag);
+    });
+
+
+    UL_3.querySelectorAll("li").forEach(li => li.remove());
+    tags3.slice().reverse().forEach(tag => {
+      let liTag = `<li>${tag} <i class="uit uit-multiply" onclick="remove3(this, '${tag}')"></i></li>`;
+      UL_3.insertAdjacentHTML("afterbegin", liTag);
+    });
+
+    countTags();
+  }
+
+  function remove1(element, tag) {
+    let index = tags1.indexOf(tag);
+    tags1 = [...tags1.slice(0, index), ...tags1.slice(index + 1)];
+    element.parentElement.remove();
+
+    countTags();
+  }
+
+
+  function remove2(element, tag) {
+    let index = tags2.indexOf(tag);
+    tags2 = [...tags2.slice(0, index), ...tags2.slice(index + 1)];
+    element.parentElement.remove();
+
+    countTags();
+  }
+
+
+  function remove3(element, tag) {
+    let index = tags3.indexOf(tag);
+    tags3 = [...tags3.slice(0, index), ...tags3.slice(index + 1)];
+    element.parentElement.remove();
+
+    countTags();
+  }
+
+  function addTag1(e) {
+    if (e.key == "Enter") {
+      console.log("typing");
+      let tag = e.target.value.replace(/\s+/g, ' ');
+      if (tag.length > 1 && !tags1.includes(tag) && !tags2.includes(tag) && !tags3.includes(tag)) {
+        if (tags1.length < maxTags) {
+          tag.split(',').forEach(tag => {
+            tags1.push(tag);
+            createTag();
+          });
+        }
+      }
+      e.target.value = "";
+    }
+  }
+
+  function addTag2(e) {
+    if (e.key == "Enter") {
+      let tag = e.target.value.replace(/\s+/g, ' ');
+      if (tag.length > 1 && !tags1.includes(tag) && !tags2.includes(tag) && !tags3.includes(tag)) {
+        if (tags2.length < maxTags) {
+          tag.split(',').forEach(tag => {
+            tags2.push(tag);
+            createTag();
+          });
+        }
+      }
+      e.target.value = "";
+    }
+  }
+
+
+  function addTag3(e) {
+    if (e.key == "Enter") {
+      let tag = e.target.value.replace(/\s+/g, ' ');
+      if (tag.length > 1 && !tags1.includes(tag) && !tags2.includes(tag) && !tags3.includes(tag)) {
+        if (tags3.length < maxTags) {
+          tag.split(',').forEach(tag => {
+            tags3.push(tag);
+            createTag();
+          });
+        }
+      }
+      e.target.value = "";
+    }
+  }
+
+  INPUT_1.addEventListener("keyup", addTag1);
+  INPUT_2.addEventListener("keyup", addTag2);
+  INPUT_3.addEventListener("keyup", addTag3);
+
+
+  function show_json_data() {
+    temp_variant_list = [];
+
+
+
+    if (tags1.length > 0) {
+      option1 = {
+        'id': 1,
+        'type': "option1",
+        "options": tags1,
+      };
+      temp_variant_list.push(option1);
+    }
+
+    if (tags2.length > 0) {
+      option2 = {
+        'id': 2,
+        'type': "option2",
+        "options": tags2,
+      };
+      temp_variant_list.push(option2);
+    }
+
+    if (tags3.length > 0) {
+      option3 = {
+        'id': 3,
+        'type': "option3",
+        "options": tags3,
+      }
+      temp_variant_list.push(option3);
+    };
+
+
+    console.log("temp list ", temp_variant_list);
+
+    var return_list = [];
+    var prev_options = [];
+    if (temp_variant_list.length > 0)
+      prev_options = temp_variant_list[0].options;
+
+    $.each(temp_variant_list, function (index, value) {
+      if (index == 0) {
+        // maybe only has one value 
+   
+          return;
+      }
+      $.each(value.options, function (index, value) {
+        var temp_list = [];
+
+        temp_list = $.map(prev_options, function (v, i) {
+          return v + ' ' + value;
+        });
+        return_list = $.merge(return_list, temp_list);
+      });
+
+      return_list = $.grep(return_list, function (i) {
+        return $.inArray(i, prev_options) == -1;
+      });
+
+      prev_options = return_list.slice(0);
+    });
+
+   
+        // maybe only has one value 
+        if (temp_variant_list.length >= 1)
+        console.log("variant list only one ", prev_options);
+        else
+        console.log("variant list with many", return_list);
+      
+    
+  }
+
+  function create_table()
+  {
+    $
+  }
+  
+  countTags();
+  createTag();
+</script>
+
+
+
 <script>
   var pop = document.getElementById("popup_item");
   var bt = document.getElementById("mybtn");
@@ -325,25 +365,25 @@
   }
 </script>
 <script>
-  const INPUT_FILE = document.querySelector('#upload-files');
-  const INPUT_CONTAINER = document.querySelector('#upload-container');
-  const FILES_LIST_CONTAINER = document.querySelector('#files-list-container');
-  const FILE_LIST = [];
-  let UPLOADED_FILES = [];
+   INPUT_FILE = document.querySelector('#upload-files');
+   INPUT_CONTAINER = document.querySelector('#upload-container');
+   FILES_LIST_CONTAINER = document.querySelector('#files-list-container');
+   FILE_LIST = [];
+   UPLOADED_FILES = [];
 
-  const multipleEvents = (element, eventNames, listener) => {
-    const events = eventNames.split(' ');
+   multipleEvents = (element, eventNames, listener) => {
+     events = eventNames.split(' ');
 
     events.forEach(event => {
       element.addEventListener(event, listener, false);
     });
   };
 
-  const previewImages = () => {
+   previewImages = () => {
     FILES_LIST_CONTAINER.innerHTML = '';
     if (FILE_LIST.length > 0) {
       FILE_LIST.forEach((addedFile, index) => {
-        const content = `
+         content = `
         <div class="form__image-container js-remove-image" data-index="${index}">
           <img class="form__image" src="${addedFile.url}" alt="${addedFile.name}">
         </div>
@@ -357,7 +397,7 @@
     }
   }
 
-  const fileUpload = () => {
+   fileUpload = () => {
     if (FILES_LIST_CONTAINER) {
       multipleEvents(INPUT_FILE, 'click dragstart dragover', () => {
         INPUT_CONTAINER.classList.add('active');
@@ -368,16 +408,16 @@
       });
 
       INPUT_FILE.addEventListener('change', () => {
-        const files = [...INPUT_FILE.files];
+         files = [...INPUT_FILE.files];
         console.log("changed")
         files.forEach(file => {
-          const fileURL = URL.createObjectURL(file);
-          const fileName = file.name;
+           fileURL = URL.createObjectURL(file);
+           fileName = file.name;
           if (!file.type.match("image/")) {
             alert(file.name + " is not an image");
             console.log(file.type)
           } else {
-            const uploadedFiles = {
+             uploadedFiles = {
               name: fileName,
               url: fileURL,
             };
@@ -394,13 +434,13 @@
     }
   };
 
-  const removeFile = () => {
+   removeFile = () => {
     UPLOADED_FILES = document.querySelectorAll(".js-remove-image");
 
     if (UPLOADED_FILES) {
       UPLOADED_FILES.forEach(image => {
         image.addEventListener('click', function () {
-          const fileIndex = this.getAttribute('data-index');
+           fileIndex = this.getAttribute('data-index');
 
           FILE_LIST.splice(fileIndex, 1);
           previewImages();

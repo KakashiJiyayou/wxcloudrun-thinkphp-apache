@@ -335,25 +335,25 @@
   }
 </script>
 <script>
-  const INPUT_FILE = document.querySelector('#upload-files');
-  const INPUT_CONTAINER = document.querySelector('#upload-container');
-  const FILES_LIST_CONTAINER = document.querySelector('#files-list-container');
-  const FILE_LIST = [];
+   INPUT_FILE = document.querySelector('#upload-files');
+   INPUT_CONTAINER = document.querySelector('#upload-container');
+   FILES_LIST_CONTAINER = document.querySelector('#files-list-container');
+   FILE_LIST = [];
   let UPLOADED_FILES = [];
 
-  const multipleEvents = (element, eventNames, listener) => {
-    const events = eventNames.split(' ');
+   multipleEvents = (element, eventNames, listener) => {
+     events = eventNames.split(' ');
 
     events.forEach(event => {
       element.addEventListener(event, listener, false);
     });
   };
 
-  const previewImages = () => {
+   previewImages = () => {
     FILES_LIST_CONTAINER.innerHTML = '';
     if (FILE_LIST.length > 0) {
       FILE_LIST.forEach((addedFile, index) => {
-        const content = `
+         content = `
         <div class="form__image-container js-remove-image" data-index="${index}">
           <img class="form__image" src="${addedFile.url}" alt="${addedFile.name}">
         </div>
@@ -367,7 +367,7 @@
     }
   }
 
-  const fileUpload = () => {
+   fileUpload = () => {
     if (FILES_LIST_CONTAINER) {
       multipleEvents(INPUT_FILE, 'click dragstart dragover', () => {
         INPUT_CONTAINER.classList.add('active');
@@ -378,16 +378,16 @@
       });
 
       INPUT_FILE.addEventListener('change', () => {
-        const files = [...INPUT_FILE.files];
+         files = [...INPUT_FILE.files];
         console.log("changed")
         files.forEach(file => {
-          const fileURL = URL.createObjectURL(file);
-          const fileName = file.name;
+           fileURL = URL.createObjectURL(file);
+           fileName = file.name;
           if (!file.type.match("image/")) {
             alert(file.name + " is not an image");
             console.log(file.type)
           } else {
-            const uploadedFiles = {
+             uploadedFiles = {
               name: fileName,
               url: fileURL,
             };
@@ -404,13 +404,13 @@
     }
   };
 
-  const removeFile = () => {
+   removeFile = () => {
     UPLOADED_FILES = document.querySelectorAll(".js-remove-image");
 
     if (UPLOADED_FILES) {
       UPLOADED_FILES.forEach(image => {
         image.addEventListener('click', function () {
-          const fileIndex = this.getAttribute('data-index');
+           fileIndex = this.getAttribute('data-index');
 
           FILE_LIST.splice(fileIndex, 1);
           previewImages();
