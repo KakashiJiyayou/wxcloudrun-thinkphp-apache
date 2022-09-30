@@ -5,7 +5,7 @@
 
 <div class="product_upload">
 
-  <form action="">
+  <form action="" onsubmit="return false;" enctype="multipart/form-data">
     <div class="title_box">
       <h3 class="title">Product Name</h3>
       <input class="title_input" type="text" placeholder="title">
@@ -23,7 +23,7 @@
       <!-- drag and drop start  -->
       <form class="form">
         <label class="form__container" id="upload-container">Choose or Drag & Drop Files
-          <input class="form__file" id="upload-files" type="file" accept="image/*" multiple="multiple" />
+          <input class="form__file" id="upload-files" type="file" multiple name="image[]" />
         </label>
         <div class="form__files-container" id="files-list-container"></div>
       </form>
@@ -81,13 +81,11 @@
       <div class="variants_table">
         <table>
           <tr>
-            <td><input type="checkbox"></td>
             <th>Variant</th>
             <th>Price</th>
           </tr>
 
           <tr>
-            <td><input type="checkbox"></td>
             <td> pizza/small</td>
             <td><input class="input" type="text" placeholder="CNY"></td>
           </tr>
@@ -101,7 +99,7 @@
   </form>
 
 
-
+  <button class="button" id="submit_data">Submit</button>
 
 </div>
 
@@ -311,22 +309,82 @@
     });
 
    
-        // maybe only has one value 
-        if (temp_variant_list.length >= 1)
-        console.log("variant list only one ", prev_options);
-        else
-        console.log("variant list with many", return_list);
-      
+        
+      create_table(return_list, prev_options);
     
   }
 
-  function create_table()
+  function create_table(return_list,prev_options)
   {
-    $
+    $list_variant = [];
+    // maybe only has one value 
+    if (temp_variant_list.length >= 1) 
+    {
+      $list_variant = prev_options;
+    }
+    else
+
+    {
+      $list_variant  = return_list;
+    }
+
+    console.log("variant list with many", $list_variant);
+
+    INDEX_INPUT =0;
+    $.each($list_variant, function(index, value){
+        row = $("<tr></tr>");
+        
+            // <td><input class="input" type="text" placeholder="CNY"></td>;
+        col = $("<td></td>").text(value);
+        row.append(col);
+
+        input = $('<input/>',{
+          class: "input",
+          type: "number",
+          step: "10",
+          id : ""+INDEX_INPUT+"",
+          value : "00.00",
+          min : "00.00"
+        });
+
+        col = $("<td></td>").append(input);
+        row.append(col);
+        
+        $(".variants_table table").append(row);
+
+    });
   }
   
   countTags();
   createTag();
+
+  $("#submit_data").click(function() {
+    var formDATA = new FormData();
+    $.each($(INPUT_FILE)[0].files, function(key, value){
+          console.log("key ", key, "value ",value , "name ") ;
+          formDATA.append("image",value);
+    });
+    // formDATA.append("image", $("#upload-files")[0].files[0]);
+    console.log("form data",  $("#upload-files")[0].files[0]);
+
+    $.ajax({
+      url : "/api/test/save/user_photo",
+      type: "POST",
+      data: formDATA,
+      processData: false,
+      cache: false,
+      contentType : false,
+      success : function(result)
+      {
+        console.log("done succefully ",result)
+      },
+      error: function(result)
+      {
+        console.log("Error ", result);
+      }
+    });
+
+  });
 </script>
 
 
@@ -383,11 +441,7 @@
     FILES_LIST_CONTAINER.innerHTML = '';
     if (FILE_LIST.length > 0) {
       FILE_LIST.forEach((addedFile, index) => {
-         content = `
-        <div class="form__image-container js-remove-image" data-index="${index}">
-          <img class="form__image" src="${addedFile.url}" alt="${addedFile.name}">
-        </div>
-      `;
+        var content = `<div class="form__image-container js-remove-image" data-index="${index}"> <img class="form__image" src="${addedFile.url}" alt="${addedFile.name}"></div>`;
 
         FILES_LIST_CONTAINER.insertAdjacentHTML('beforeEnd', content);
       });
@@ -426,10 +480,12 @@
           }
         });
 
-        console.log(FILE_LIST) //final list of uploaded files
+        console.log("File list",FILE_LIST) //final list of uploaded files
         previewImages();
         UPLOADED_FILES = document.querySelectorAll(".js-remove-image");
         removeFile();
+
+        
       });
     }
   };

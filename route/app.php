@@ -81,6 +81,11 @@ Route::get("/logout/user_id",       "logout/show2");
 Route::get("/dashboard/:user_name", "dashboard/dashboard");
 Route::get("/nazmulshuvo/:user_name", "nazmulshuvo/dashboard");
 Route::get("/product/:user_name", "product/product");
+
+// save file in think php
+Route::get("/api/test/save/jsonfile", "test/test_save_json");
+Route::POST("/api/test/save/user_photo","test/test_post_image");
+
 // Route::get("/product", "product/call");
 
 

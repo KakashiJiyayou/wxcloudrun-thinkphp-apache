@@ -99,5 +99,47 @@ class Test
             }
         }
     }
+
+
+    /**save json  */
+    public function test_save_json()
+    {
+        $value = file_get_contents(dirname(dirname(__FILE__))."../../public/uploads/json/share_goods/sharegoods.json");
+        $dir = dirname(dirname(__FILE__))."../../public/uploads/tests";
+        $myfile = fopen("$dir/data.json", "w");
+        fwrite($myfile, $value);
+        fclose($myfile); 
+    }
+
+    /**
+     * testing saving image from the pos call 
+     */
+
+    public function test_post_image()
+    {
+        $dir = dirname(dirname(__FILE__))."../../public/uploads/tests/";
+     
+        $files = request()->file('image');
+        echo "images ".$files ."     "   ;
+        
+        $index = 0;
+        foreach($files as $file){
+            if($file)
+            {
+                $info = $file->move($dir,$index ."name.png");
+
+                if($info)
+                {
+                    $img_src = $dir."/".$info;
+                    echo $img_src;
+                }
+                else{
+                    echo "error saving fiel";
+                }
+            }
+            $index = $index + 1;
+        }
+        
+    }
     
 }
