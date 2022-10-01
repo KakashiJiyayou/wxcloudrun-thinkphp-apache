@@ -119,26 +119,30 @@ class Test
     {
         $dir = dirname(dirname(__FILE__))."../../public/uploads/tests/";
      
-        $files = request()->file('image');
-        echo "images ".$files ."     "   ;
-        
-        $index = 0;
-        foreach($files as $file){
-            if($file)
-            {
-                $info = $file->move($dir,$index ."name.png");
+        // $files = request()->file('image');
+        // echo "images ".$files ."     "   ;
+        // echo "hello";
 
-                if($info)
-                {
-                    $img_src = $dir."/".$info;
-                    echo $img_src;
-                }
-                else{
-                    echo "error saving fiel";
-                }
-            }
-            $index = $index + 1;
-        }
+        // $trr = $_FILES['image']["name"];
+        // echo "hi ".$trr;
+        
+        // $index = 0;
+        // foreach($files as $file){
+        //     if($file)
+        //     {
+        //         $info = $file->move($dir,$index ."name.png");
+
+        //         if($info)
+        //         {
+        //             $img_src = $dir."/".$info;
+        //             echo $img_src;
+        //         }
+        //         else{
+        //             echo "error saving fiel";
+        //         }
+        //     }
+        //     $index = $index + 1;
+        // }
         
     }
     
