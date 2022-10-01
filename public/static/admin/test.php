@@ -2,6 +2,7 @@
 var_dump ($_POST["value"]);
 var_dump ($_FILES);
 
+
 $JASON_DATA = json_decode($_POST["value"]);
 
 echo "  value name " . $JASON_DATA->name;

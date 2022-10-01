@@ -4,6 +4,7 @@
             "brand_name" : "coco",
             "short_into" :"Viva del lina",
             "brand_id" : "b1",
+            "brand_logo" :"", 
             "items" : 
             [
                 {
@@ -47,6 +48,7 @@
             "brand_name" : "choco",
             "short_into" :"vamos inaque",
             "brand_id" : "b2",
+            "brand_logo" :"", 
             "items" : 
             [
                 {

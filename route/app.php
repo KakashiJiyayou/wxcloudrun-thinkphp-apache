@@ -96,5 +96,6 @@ Route::POST("/api/test/save/user_photo","test/test_post_image");
 // delete later
 Route::get("/logout", "logout/callme");
 
-// Route::get("/product", "product/callme");
+// ** save product json
+Route::get("/api/save_data/prodcut_json", "product/save_prosuct_json");
 
