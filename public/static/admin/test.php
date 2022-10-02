@@ -89,5 +89,5 @@ echo "  .  product json      .  ";
 var_dump($PRODUCT_JSON) ;
 
 $myfile = fopen("../../uploads/json/product/product.json", "w");
-fwrite($myfile,"{". json_encode($PRODUCT_JSON,JSON_PRETTY_PRINT)."}");
+fwrite($myfile, json_encode($PRODUCT_JSON,JSON_PRETTY_PRINT));
 fclose($myfile); 
