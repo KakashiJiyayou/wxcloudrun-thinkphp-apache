@@ -1,5 +1,6 @@
 <?php 
 
+            //   "https://rider1-2156191-1312445728.ap-shanghai.run.tcloudbase.com/uploads/img/product"
 $SEREVR_URL = "https://rider1-2156191-1312445728.ap-shanghai.run.tcloudbase.com/";
 // var_dump ($_POST["value"]);
 // var_dump ($_FILES);
@@ -66,7 +67,7 @@ $json_inside =array (
    "desc"      => $JASON_DATA->desc,
    "price"     => $JASON_DATA->price,
    "hot"       => true,
-   
+
    "brand_name"=> $JASON_DATA->brand,
    "brand_id"  => $JASON_DATA->type
 );
@@ -82,9 +83,11 @@ $PRODUCT_JSON = array(
    ]
 );
 
+
+
 echo "  .  product json      .  ";
 var_dump($PRODUCT_JSON) ;
 
 $myfile = fopen("../../uploads/json/product/product.json", "w");
-fwrite($myfile, json_encode($PRODUCT_JSON,JSON_PRETTY_PRINT));
+fwrite($myfile,"{". json_encode($PRODUCT_JSON,JSON_PRETTY_PRINT)."}");
 fclose($myfile); 
