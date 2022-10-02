@@ -50,3 +50,7 @@ if( isset($_FILES['brand_logo']['name']) &&
 
     printf( json_encode($data));
 }
+
+
+
+

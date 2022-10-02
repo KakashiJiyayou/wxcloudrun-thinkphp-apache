@@ -465,4 +465,72 @@
 
   });
 </script>
-<!-- text download  -->
+
+
+ <!-- text download  -->
+ <script>
+  $('#save-link').click(function ()
+{
+  var retContent = [];
+  var retString = '';
+  $('tbody tr').each(function (idx, elem)
+  {
+    var elemText = [];
+    $(elem).children('td').each(function (childIdx, childElem)
+    {
+      elemText.push($(childElem).text());
+    });
+    retContent.push(`(${elemText.join(',')})`);
+  });
+  retString = retContent.join(',\r\n');
+    var file = new Blob([retString], {type: 'text/plain'});
+  var btn = $('#save-link');
+  btn.attr("href", URL.createObjectURL(file));
+  btn.prop("download", "data.txt");
+})
+
+
+</script>
+   
+
+ <!-- csv  -->
+
+ <script>
+
+  const headRow = [...document.querySelectorAll('table thead tr td')]
+      .map(column => column.textContent.trim());
+  
+  const rows = [...document.querySelectorAll('table tbody tr')]
+      .map(tr => [...tr.querySelectorAll('td')]
+          .map(td => td.textContent.trim())
+      );
+  
+  const content = [headRow, ...rows]
+      .map(row => row.map(str => '"' + (str ? str.replace(/"/g, '""') : '') + '"'))
+      .map(row => row.join(','))
+      .join('\n');
+  
+  const BOM = '\uFEFF'; // utf-8 byte-order-mark
+  const csvBlob = new Blob([BOM + content], { type: 'text/csv;charset=utf-8' });
+  
+  function showCsv(){
+      console.log(content);
+  }
+  
+  function download(){
+      if (window.navigator.msSaveOrOpenBlob) { 
+          // IE hack; see http://msdn.microsoft.com/en-us/library/ie/hh779016.aspx
+          navigator.msSaveBlob(csvBlob, 'dataTable.csv');
+      } else {
+          const objectUrl = URL.createObjectURL(csvBlob);
+          const a = document.createElement('a');
+          a.setAttribute('href', objectUrl);
+          a.setAttribute('download', 'dataTable.csv');
+  
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);	
+      }
+  }
+    
+  </script>
