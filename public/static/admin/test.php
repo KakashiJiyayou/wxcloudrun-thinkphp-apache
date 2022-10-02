@@ -66,6 +66,7 @@ $json_inside =array (
    "desc"      => $JASON_DATA->desc,
    "price"     => $JASON_DATA->price,
    "hot"       => true,
+   
    "brand_name"=> $JASON_DATA->brand,
    "brand_id"  => $JASON_DATA->type
 );
