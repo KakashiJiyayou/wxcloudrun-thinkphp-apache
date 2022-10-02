@@ -1,6 +1,6 @@
 {
     "data": [
-        [
+        
             {
                 "product_id": "xxx1",
                 "src": "https:\/\/rider1-2156191-1312445728.ap-shanghai.run.tcloudbase.com\/uploads\/img\/product\/p1.jpg",
@@ -67,5 +67,5 @@
                 "brand_id": "pastry"
             }
         ]
-    ]
+    
 }

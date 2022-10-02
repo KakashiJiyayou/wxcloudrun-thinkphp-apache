@@ -78,9 +78,9 @@ array_push($PRODUCT_PREVIOUS_ARRAY, $json_inside);
 
 $PRODUCT_JSON = array(
    "data" => 
-   [
+   
       $PRODUCT_PREVIOUS_ARRAY
-   ]
+   
 );
 
 
