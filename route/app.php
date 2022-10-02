@@ -8,7 +8,7 @@
 // +----------------------------------------------------------------------
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
-use think\facade\Route;
+use think\facade\Route; 
 
 // 获取当前计数
 // Route::get('/api/count', 'index/getCount');
