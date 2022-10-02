@@ -60,12 +60,18 @@ Route::get("/api/get_sharegoods_buy_info/:product_id/:user_id", 'test/get_shareg
 // if user does not exits it will create new user
 Route::post("/api/save/userinformation", "saveandgetinfo/save_user_information");
 
+// saving brand information
+Route::post("/api/save/brand_info", "saveandgetinfo/save_brand_info");
+
 
 
 // practice
 Route::get("/api/get/query/simple/db/query", "practicedb/query_data");
 Route::get("/api/save", "practicedb/save_data");
 Route::get("/api/do/crud", "practicedb/simple_crud");
+
+// testing 
+Route::post("/api/get/brand_info", "saveandgetinfo/get_brand_info");
 /************************************************************** *
                     DATABASE                
 *************************************************************** */
@@ -98,4 +104,5 @@ Route::get("/logout", "logout/callme");
 
 // ** save product json
 Route::get("/api/save_data/prodcut_json", "product/save_prosuct_json");
+
 

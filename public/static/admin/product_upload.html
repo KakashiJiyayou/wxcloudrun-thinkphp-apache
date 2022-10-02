@@ -8,14 +8,36 @@
   <form action="" onsubmit="return false;" enctype="multipart/form-data">
     <div class="title_box">
       <h3 class="title">Product Name</h3>
-      <input class="title_input" type="text" placeholder="title">
+      <input class="title_input" type="text" placeholder="title" id="product_name">
       <h3 class="title">Product Price</h3>
-      <input class="title_input" type="number" step="0.01" placeholder="price">
+      <input class="title_input" type="number" step="0.01" placeholder="price" id = "product_price">
       <h3 class="title">Description</h3>
-      <textarea class="textarea" name="" id="" placeholder="description"></textarea>
+      <textarea class="textarea" name="" id="product_desc" placeholder="description"></textarea>
     </div>
 
-    
+    <!-- brand select -->
+    <h4 class="card-title">Single select boxes</h4>
+    <div class="card-body">
+      <select name="select_brand" id="brand_select" class="js-basic-single form-control" required>
+        
+      </select>
+    </div>
+    <!-- brand select -->
+
+
+    <!-- type select -->
+    <h4 class="card-title">Single select boxes</h4>
+    <div class="card-body">
+      <select name="select_brand" id="type_select" class="js-basic-single form-control" required>
+        <option value="0">Pastry</option>
+        <option value="1">Cake</option>
+        <option value="3">Salty</option>
+        <option value="4">Sweet</option>
+        <option value="5">Dry</option>
+        <option value="6">Snack</option>
+      </select>
+    </div>
+    <!-- type select -->
 
     <div class="media_box">
       <h3 class="title">Product photos</h3>
@@ -103,10 +125,10 @@
 </div>
 
 
-
-
-
+<!-- ************************ DATABSAE ************************ -->
 <script>
+
+  //@ sku 
   UL_1 = document.querySelector(".wrapper1 ul#tag_input1");
   INPUT_1 = document.querySelector("ul#tag_input1 input");
   tagNumb_1 = document.querySelector(".wrapper1 .details span");
@@ -125,7 +147,7 @@
   tags2 = [];
   tags3 = [];
 
-  
+
 
   function countTags() {
     INPUT_1;
@@ -288,8 +310,8 @@
     $.each(temp_variant_list, function (index, value) {
       if (index == 0) {
         // maybe only has one value 
-   
-          return;
+
+        return;
       }
       $.each(value.options, function (index, value) {
         var temp_list = [];
@@ -307,57 +329,57 @@
       prev_options = return_list.slice(0);
     });
 
-   
-        
-      create_table(return_list, prev_options);
-    
+
+
+    create_table(return_list, prev_options);
+
   }
 
-  function create_table(return_list,prev_options)
-  {
+  function create_table(return_list, prev_options) {
     $list_variant = [];
     // maybe only has one value 
-    if (temp_variant_list.length >= 1) 
-    {
+    if (temp_variant_list.length >= 1) {
       $list_variant = prev_options;
-    }
-    else
+    } else
 
     {
-      $list_variant  = return_list;
+      $list_variant = return_list;
     }
 
     console.log("variant list with many", $list_variant);
 
-    INDEX_INPUT =0;
-    $.each($list_variant, function(index, value){
-        row = $("<tr></tr>");
-        
-            // <td><input class="input" type="text" placeholder="CNY"></td>;
-        col = $("<td></td>").text(value);
-        row.append(col);
+    INDEX_INPUT = 0;
+    $.each($list_variant, function (index, value) {
+      row = $("<tr></tr>");
 
-        input = $('<input/>',{
-          class: "input",
-          type: "number",
-          step: "10",
-          id : ""+INDEX_INPUT+"",
-          value : "00.00",
-          min : "00.00"
-        });
+      // <td><input class="input" type="text" placeholder="CNY"></td>;
+      col = $("<td></td>").text(value);
+      row.append(col);
 
-        col = $("<td></td>").append(input);
-        row.append(col);
-        
-        $(".variants_table table").append(row);
+      input = $('<input/>', {
+        class: "input",
+        type: "number",
+        step: "10",
+        id: "" + INDEX_INPUT + "",
+        value: "00.00",
+        min: "00.00"
+      });
+
+      col = $("<td></td>").append(input);
+      row.append(col);
+
+      $(".variants_table table").append(row);
 
     });
   }
-  
+
   countTags();
   createTag();
 
-  $("#submit_data").click(function() {
+
+  //@ sku end
+
+  $("#submit_data").click(function () {
     var formDATA = new FormData();
     // $.each($("#upload-files").files, function(key, value){
     //       console.log("key ", key, "value ",value , "name ") ;
@@ -366,45 +388,101 @@
     // formDATA.append("image", $("#upload-files")[0].files[0]);
 
     input_image_v = document.getElementById("upload-files");
-    total_files =  input_image_v.files.length;
-    for (var index=0; index< total_files;index++)
-    {
+
+    product_name  =  $("#product_name").val();
+    product_price =  $("#product_price").val();
+    product_desc  =  $("#product_desc").val();
+
+    total_files = input_image_v.files.length;
+
+    for (var index = 0; index < total_files; index++) {
       formDATA.append("image[]", input_image_v.files[index]);
-      console.log( "value ",input_image_v.files[index]) ;
+      console.log("value ", input_image_v.files[index]);
     }
 
-    data ={
-      name : "amigo",
-      value: {
-        name: "amigo",
-        value: "none"
-      }
-  
-    };
-    formDATA.append("value", JSON.stringify( data));
+    data = {
+      name  : product_name,
+      desc  : product_desc,
+      price : product_price,
+      brand : brand_value_selected,
+      type  : type_value_selected,
+      brand_id : $('#brand_select :selected').val()
+      
 
-    console.log("form data",  formDATA, " data ", data );
+    };
+    formDATA.append("value", JSON.stringify(data));
+
+    console.log("form data", formDATA, " data ", data);
 
     $.ajax({
-      url : "/static/admin/test.php",
+      url: "/static/admin/test.php",
       type: "POST",
       data: formDATA,
       processData: false,
       cache: false,
-      contentType : false,
-      success : function(result)
-      {
-        console.log("done succefully ",result)
+      contentType: false,
+      success: function (result) {
+        console.log("done succefully ", result)
       },
-      error: function(result)
-      {
+      error: function (result) {
         console.log("Error ", result);
       }
     });
 
   });
-</script>
 
+
+
+ //select funciton
+
+ brand_value_selected = "点金狮";
+ type_value_selected  = "pastry"
+ $("#brand_select").change(function(){
+  brand_value_selected = $('#brand_select :selected').text();
+  console.log("selected brand ", brand_value_selected , " value ", $('#brand_select :selected').val());
+  });
+
+  $("#type_select").change( function (){
+    type_value_selected  = $('#type_select :selected').text();
+    console.log("selected type ", type_value_selected ,"  value ", $('#type_select :selected').val());
+  });
+
+ //select function
+
+ // need to check database for data
+ $(document).ready(function () {
+    console.log("brand upload loading");
+    load_both_select();
+  });
+
+  function load_both_select()
+  {
+    $.ajax({
+      url: "/api/get/brand_info",
+      method: "POST",
+      processData: false,
+      cache: false,
+      contentType: false,
+      success : function(result )
+      {
+        brand_info = result;
+        var $select = $('#brand_select');
+        $('#brand_select').empty();
+        var $option;
+
+        $array_data = brand_info["value"];
+        $.each($array_data, function (index, value) {
+            $option = $('<option value="' + index + '">' + value["brand_name"] + '</option>');
+            
+            $select.append($option);
+        });
+      }
+    });
+  }
+
+
+</script>
+<!-- ************************ DATABSAE ************************ -->
 
 
 <script>
@@ -441,25 +519,26 @@
   }
 </script>
 <script>
-   INPUT_FILE = document.querySelector('#upload-files');
-   INPUT_CONTAINER = document.querySelector('#upload-container');
-   FILES_LIST_CONTAINER = document.querySelector('#files-list-container');
-   FILE_LIST = [];
-   UPLOADED_FILES = [];
+  INPUT_FILE = document.querySelector('#upload-files');
+  INPUT_CONTAINER = document.querySelector('#upload-container');
+  FILES_LIST_CONTAINER = document.querySelector('#files-list-container');
+  FILE_LIST = [];
+  UPLOADED_FILES = [];
 
-   multipleEvents = (element, eventNames, listener) => {
-     events = eventNames.split(' ');
+  multipleEvents = (element, eventNames, listener) => {
+    events = eventNames.split(' ');
 
     events.forEach(event => {
       element.addEventListener(event, listener, false);
     });
   };
 
-   previewImages = () => {
+  previewImages = () => {
     FILES_LIST_CONTAINER.innerHTML = '';
     if (FILE_LIST.length > 0) {
       FILE_LIST.forEach((addedFile, index) => {
-        var content = `<div class="form__image-container js-remove-image" data-index="${index}"> <img class="form__image" src="${addedFile.url}" alt="${addedFile.name}"></div>`;
+        var content =
+          `<div class="form__image-container js-remove-image" data-index="${index}"> <img class="form__image" src="${addedFile.url}" alt="${addedFile.name}"></div>`;
 
         FILES_LIST_CONTAINER.insertAdjacentHTML('beforeEnd', content);
       });
@@ -469,7 +548,7 @@
     }
   }
 
-   fileUpload = () => {
+  fileUpload = () => {
     if (FILES_LIST_CONTAINER) {
       multipleEvents(INPUT_FILE, 'click dragstart dragover', () => {
         INPUT_CONTAINER.classList.add('active');
@@ -480,16 +559,16 @@
       });
 
       INPUT_FILE.addEventListener('change', () => {
-         files = [...INPUT_FILE.files];
+        files = [...INPUT_FILE.files];
         console.log("changed")
         files.forEach(file => {
-           fileURL = URL.createObjectURL(file);
-           fileName = file.name;
+          fileURL = URL.createObjectURL(file);
+          fileName = file.name;
           if (!file.type.match("image/")) {
             alert(file.name + " is not an image");
             console.log(file.type)
           } else {
-             uploadedFiles = {
+            uploadedFiles = {
               name: fileName,
               url: fileURL,
             };
@@ -498,23 +577,23 @@
           }
         });
 
-        console.log("File list",FILE_LIST) //final list of uploaded files
+        console.log("File list", FILE_LIST) //final list of uploaded files
         previewImages();
         UPLOADED_FILES = document.querySelectorAll(".js-remove-image");
         removeFile();
 
-        
+
       });
     }
   };
 
-   removeFile = () => {
+  removeFile = () => {
     UPLOADED_FILES = document.querySelectorAll(".js-remove-image");
 
     if (UPLOADED_FILES) {
       UPLOADED_FILES.forEach(image => {
         image.addEventListener('click', function () {
-           fileIndex = this.getAttribute('data-index');
+          fileIndex = this.getAttribute('data-index');
 
           FILE_LIST.splice(fileIndex, 1);
           previewImages();

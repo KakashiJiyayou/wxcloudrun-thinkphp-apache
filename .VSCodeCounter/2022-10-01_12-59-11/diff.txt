@@ -1,0 +1,42 @@
+Date : 2022-10-01 12:59:11
+Directory : e:\Project\miniapp\learning\delivery\B Boss\Boss Deliver_backup\wxcloudrun-thinkphp-apache\app\controller
+Total : 12 files,  366 codes, 132 comments, 146 blanks, all 644 lines
+
+Languages
++----------+------------+------------+------------+------------+------------+
+| language | files      | code       | comment    | blank      | total      |
++----------+------------+------------+------------+------------+------------+
+| PHP      |         11 |        366 |        132 |        147 |        645 |
+| HTML     |          1 |          0 |          0 |         -1 |         -1 |
++----------+------------+------------+------------+------------+------------+
+
+Directories
++-----------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                                              | files      | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                                                 |         12 |        366 |        132 |        146 |        644 |
+| ..                                                                                                                                |          2 |         -2 |          0 |         -5 |         -7 |
+| ..\..                                                                                                                             |          2 |         -2 |          0 |         -5 |         -7 |
+| ..\..\public                                                                                                                      |          2 |         -2 |          0 |         -5 |         -7 |
+| ..\..\public\static                                                                                                               |          2 |         -2 |          0 |         -5 |         -7 |
+| ..\..\public\static\test                                                                                                          |          2 |         -2 |          0 |         -5 |         -7 |
++-----------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-----------------------------------------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| filename                                                                                                                          | language | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| e:\Project\miniapp\learning\delivery\B Boss\Boss Deliver_backup\wxcloudrun-thinkphp-apache\app\controller\Dashboard.php           | PHP      |         10 |          0 |          9 |         19 |
+| e:\Project\miniapp\learning\delivery\B Boss\Boss Deliver_backup\wxcloudrun-thinkphp-apache\app\controller\Getcode.php             | PHP      |         40 |         17 |         28 |         85 |
+| e:\Project\miniapp\learning\delivery\B Boss\Boss Deliver_backup\wxcloudrun-thinkphp-apache\app\controller\Getid.php               | PHP      |         15 |          1 |          5 |         21 |
+| e:\Project\miniapp\learning\delivery\B Boss\Boss Deliver_backup\wxcloudrun-thinkphp-apache\app\controller\Index.php               | PHP      |         77 |         22 |         11 |        110 |
+| e:\Project\miniapp\learning\delivery\B Boss\Boss Deliver_backup\wxcloudrun-thinkphp-apache\app\controller\Logout.php              | PHP      |         20 |          2 |          5 |         27 |
+| e:\Project\miniapp\learning\delivery\B Boss\Boss Deliver_backup\wxcloudrun-thinkphp-apache\app\controller\Nazmulshuvo.php         | PHP      |         10 |          0 |          9 |         19 |
+| e:\Project\miniapp\learning\delivery\B Boss\Boss Deliver_backup\wxcloudrun-thinkphp-apache\app\controller\Practicedb.php          | PHP      |         47 |          0 |         19 |         66 |
+| e:\Project\miniapp\learning\delivery\B Boss\Boss Deliver_backup\wxcloudrun-thinkphp-apache\app\controller\Saveandgetinfo.php      | PHP      |         48 |         18 |         17 |         83 |
+| e:\Project\miniapp\learning\delivery\B Boss\Boss Deliver_backup\wxcloudrun-thinkphp-apache\app\controller\Test.php                | PHP      |         74 |         49 |         27 |        150 |
+| e:\Project\miniapp\learning\delivery\B Boss\Boss Deliver_backup\wxcloudrun-thinkphp-apache\app\controller\product.php             | PHP      |         27 |         23 |         21 |         71 |
+| e:\Project\miniapp\learning\delivery\B Boss\Boss Deliver_backup\wxcloudrun-thinkphp-apache\public\static\test\index.html          | HTML     |          0 |          0 |         -1 |         -1 |
+| e:\Project\miniapp\learning\delivery\B Boss\Boss Deliver_backup\wxcloudrun-thinkphp-apache\public\static\test\save_projson_db.php | PHP      |         -2 |          0 |         -4 |         -6 |
+| Total                                                                                                                             |          |        366 |        132 |        146 |        644 |
++-----------------------------------------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+

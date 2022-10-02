@@ -1,63 +1,71 @@
 {
-    "data":[
-        {
-            "product_id" : "xxx1",
-            "src" :"https://rider1-2156191-1312445728.ap-shanghai.run.tcloudbase.com/uploads/img/product/p1.jpg",
-            "title": "egger",
-            "desc": "It's a home made sweet delicacy that will make your mouth watery ",
-            "price" : 50,
-            "hot":false,
-            "brand_name": "coco",
-            "brand_id" :"b1",
-            "type" : "snacks"
-        },
-
-        {
-            "product_id" : "xxx2",
-            "src" :"https://rider1-2156191-1312445728.ap-shanghai.run.tcloudbase.com/uploads/img/sku/xxx2/p2.jpg",
-            "title": "gg oo j",
-            "desc": "好听的音乐使人陶醉 好美的旋律 ，牽动温柔的心弦。听了无数遍了还是觉得超好听，味道浓浓，实在太赞了 ",
-            "price" : 5,
-            "hot":true,
-            "brand_name": "coco",
-            "brand_id" :"b1",
-            "type" : "cake"
-        },
-
-        {
-            "product_id" : "xxx3",
-            "src" :"https://rider1-2156191-1312445728.ap-shanghai.run.tcloudbase.com/uploads/img/product/p3.jpg",
-            "title": "egg pulp",
-            "desc": "It's a home made sweet delicacy that will make your mouth watery ",
-            "price" : 15,
-            "hot":false,
-            "brand_name": "choco",
-            "brand_id" :"b2",
-            "type" : "chips"
-        },
-
-        {
-            "product_id" : "xxx4",
-            "src" :"https://rider1-2156191-1312445728.ap-shanghai.run.tcloudbase.com/uploads/img/product/p4.jpg",
-            "title": "pulp",
-            "desc": "自從遇見我就愛上了我，當年不知啊對不起丫頭因為我的回憶裡都是遍段片段啊真的非常非常非常抱歉喔沙木達",
-            "price" : 230,
-            "hot":false,
-            "brand_name": "choco",
-            "brand_id" :"b2",
-            "type" : "drinks"
-        },
-
-        {
-            "product_id" : "xxx5",
-            "src" :"https://rider1-2156191-1312445728.ap-shanghai.run.tcloudbase.com/uploads/img/product/p5.jpg",
-            "title": "e p",
-            "desc": "It's a home made sweet delicacy that will make your mouth watery ",
-            "price" : 250,
-            "hot":false,
-            "brand_name": "choco",
-            "brand_id" :"b2",
-            "type" : "snacks"
-        }
+    "data": [
+        [
+            {
+                "product_id": "xxx1",
+                "src": "https:\/\/rider1-2156191-1312445728.ap-shanghai.run.tcloudbase.com\/uploads\/img\/product\/p1.jpg",
+                "title": "egger",
+                "desc": "It's a home made sweet delicacy that will make your mouth watery ",
+                "price": 50,
+                "hot": false,
+                "brand_name": "coco",
+                "brand_id": "b1",
+                "type": "snacks"
+            },
+            {
+                "product_id": "xxx2",
+                "src": "https:\/\/rider1-2156191-1312445728.ap-shanghai.run.tcloudbase.com\/uploads\/img\/sku\/xxx2\/p2.jpg",
+                "title": "gg oo j",
+                "desc": "\u597d\u542c\u7684\u97f3\u4e50\u4f7f\u4eba\u9676\u9189 \u597d\u7f8e\u7684\u65cb\u5f8b \uff0c\u727d\u52a8\u6e29\u67d4\u7684\u5fc3\u5f26\u3002\u542c\u4e86\u65e0\u6570\u904d\u4e86\u8fd8\u662f\u89c9\u5f97\u8d85\u597d\u542c\uff0c\u5473\u9053\u6d53\u6d53\uff0c\u5b9e\u5728\u592a\u8d5e\u4e86 ",
+                "price": 5,
+                "hot": true,
+                "brand_name": "coco",
+                "brand_id": "b1",
+                "type": "cake"
+            },
+            {
+                "product_id": "xxx3",
+                "src": "https:\/\/rider1-2156191-1312445728.ap-shanghai.run.tcloudbase.com\/uploads\/img\/product\/p3.jpg",
+                "title": "egg pulp",
+                "desc": "It's a home made sweet delicacy that will make your mouth watery ",
+                "price": 15,
+                "hot": false,
+                "brand_name": "choco",
+                "brand_id": "b2",
+                "type": "chips"
+            },
+            {
+                "product_id": "xxx4",
+                "src": "https:\/\/rider1-2156191-1312445728.ap-shanghai.run.tcloudbase.com\/uploads\/img\/product\/p4.jpg",
+                "title": "pulp",
+                "desc": "\u81ea\u5f9e\u9047\u898b\u6211\u5c31\u611b\u4e0a\u4e86\u6211\uff0c\u7576\u5e74\u4e0d\u77e5\u554a\u5c0d\u4e0d\u8d77\u4e2b\u982d\u56e0\u70ba\u6211\u7684\u56de\u61b6\u88e1\u90fd\u662f\u904d\u6bb5\u7247\u6bb5\u554a\u771f\u7684\u975e\u5e38\u975e\u5e38\u975e\u5e38\u62b1\u6b49\u5594\u6c99\u6728\u9054",
+                "price": 230,
+                "hot": false,
+                "brand_name": "choco",
+                "brand_id": "b2",
+                "type": "drinks"
+            },
+            {
+                "product_id": "xxx5",
+                "src": "https:\/\/rider1-2156191-1312445728.ap-shanghai.run.tcloudbase.com\/uploads\/img\/product\/p5.jpg",
+                "title": "e p",
+                "desc": "It's a home made sweet delicacy that will make your mouth watery ",
+                "price": 250,
+                "hot": false,
+                "brand_name": "choco",
+                "brand_id": "b2",
+                "type": "snacks"
+            },
+            {
+                "product_id": "xxx6",
+                "src": "https:\/\/rider1-2156191-1312445728.ap-shanghai.run.tcloudbase.com\/uploads\/img\/product\/\u5fae\u4fe1\u56fe\u7247_20220929224509.jpg",
+                "title": "testing ",
+                "desc": "this is ",
+                "price": "345345",
+                "hot": true,
+                "brand_name": "\u86cb\u5148\u751f. \u7206\u86cb\u5410\u53f8",
+                "brand_id": "pastry"
+            }
+        ]
     ]
 }

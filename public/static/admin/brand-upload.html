@@ -1,5 +1,7 @@
+<!-- Banner Upload AREA -->
 <div class="container-fluid">
-  <!-- begin row -->
+
+  <!-- Upper page name -->
   <div class="row">
     <div class="col-md-12 m-b-30">
       <!-- begin page title -->
@@ -7,6 +9,7 @@
         <div class="page-title mb-2 mb-sm-0">
           <h1>Brand upload</h1>
         </div>
+        <!-- in page navigaiton -->
         <div class="ml-auto d-flex align-items-center">
           <nav>
             <ol class="breadcrumb p-0 m-b-0">
@@ -21,38 +24,52 @@
             </ol>
           </nav>
         </div>
+        <!-- in page navigaiton end -->
       </div>
       <!-- end page title -->
     </div>
   </div>
-  <!-- end row -->
-  <!-- begin row -->
+  <!-- Upper page name end-->
+
+
+  <!-- form to uplaod data -->
   <div class="row">
     <div class="col-md-12">
       <div class="card card-statistics">
 
-        <div class="card-heading">
-          <h4 class="card-title">Brand name</h4>
-        </div>
+        <form action="" onsubmit="return false;" enctype="multipart/form-data">
 
-        <div class="card-body">
-          <input type="text" class="form-control" placeholder="brand name">
-        </div>
-        <h4>Brand logo</h4>
-        <input type="file" class="form-control-file" style="padding: 25px;" id="exampleFormControlFile1">
-        <div class="button" style="padding: 20px; border-bottom:1px solid rgb(243, 237, 237) ">
-          <button class="btn btn-primary" type="submit">Submit form</button></div>
+          <div class="card-heading">
+            <h6 class="card-title">Brand name</h6>
+          </div>
+          <div class="card-body">
+            <input type="text" class="form-control" placeholder="brand name" name="brand_name" required
+              id="brand_name" />
+          </div>
+
+          <h6>Brand logo</h6>
+          <input type="file" class="form-control-file" style="padding: 25px;" id="brand_image" name="image" required />
+          <div class="button" style="padding: 20px; border-bottom:1px solid rgb(243, 237, 237) ">
+            <button class="btn btn-primary" type="submit" id="brand_submit">SUBMIT</button>
+          </div>
+
+
+          
+            
+      
+        </form>
+
+
       </div>
     </div>
-
-
-
-
-
   </div>
-  <!-- end row -->
-</div>
+  <!-- form to uplaod data end-->
 
+</div>
+<!-- Banner Upload AREA  end-->
+
+
+<!-- show banner -->
 <div class="container-fluid">
   <!-- begin row -->
   <div class="row">
@@ -76,8 +93,8 @@
             <table id="datatable" class="display compact table table-striped table-bordered">
               <caption class="btn-toolbar tableexport-caption" style="caption-side: top;">
                 <!-- <button type="button" tableexport-id="5b144a9-xlsx" class="btn btn-default xlsx">Export to xlsx</button> -->
-                <button onclick="download()" type="button" tableexport-id="5b144a9-xlsx"
-                  class="btn btn-default xlsx">Export csv file</button>
+                <button type="button" tableexport-id="5b144a9-xlsx" class="btn btn-default xlsx" id="export_csv">Export
+                  csv file</button>
                 <a href="#" tableexport-id="20c9676-txt" class="btn btn-default txt" type="button" id="save-link">Export
                   to txt</a>
               </caption>
@@ -87,38 +104,10 @@
                   <th>Brand Image</th>
                   <th>Brand Name</th>
                   <th>Brand id</th>
-                  <th>brand decription</th>
-                  <th>Price</th>
-                  <th>Stock status</th>
-
-                  <th>Action</th>
-                  <th>Action</th>
 
                 </tr>
               </thead>
               <tbody>
-                <tr>
-
-                  <td><img src="/assets/img/browser-logo/bootstrap.png" alt=""></td>
-                  <td>Name</td>
-                  <td>12345678</td>
-                  <td>Description</td>
-                  <td>1000</td>
-                  <td>In stock</td>
-                  <td>
-                    <button type="button" class="tabledit-edit-button btn btn-sm btn-primary active"
-                      style="float: none;"><span class="fa fa-pencil"></span> &nbsp; EDIT</button>
-                  </td>
-                  <td>
-                    <button type="button" class="tabledit-edit-button btn btn-sm btn-primary active"
-                      style="float: none; background: red; border-color: red;"><span class="fa fa-pencil"></span> &nbsp;
-                      Delete</button>
-                  </td>
-
-
-
-                </tr>
-              
                 <!-- </tr> -->
               </tbody>
               <tfoot>
@@ -147,8 +136,139 @@
 
 
 </div>
+<!-- SHOW BANNER end -->
 
 
+
+<!-- *********** DATABSE********************** -->
+<script>
+
+  function load_data_table()
+  {
+    $.ajax({
+      url: "/api/get/brand_info",
+      method: "POST",
+      processData: false,
+      cache: false,
+      contentType: false,
+      success: function (result) {
+        brand_info = result;
+        console.log("brand info", brand_info);
+        console.log("brand info", brand_info["value"][0]["id"]);
+
+        $array_data = brand_info["value"];
+        $("#datatable").empty();
+        $.each($array_data, function (index, value) {
+          row = $("<tr></tr>");
+
+          // adding image
+          col = $("<td></td>");
+          img = $('<img  />', {
+            id: `${ value["id"] }-img`,
+            src: `/${ value["img_src"]}`,
+            alt: `${ value["id"] }-img`,
+            style: "    height: 100px;width: 100px;"
+          });
+          col.append(img);
+          row.append(col);
+
+          // adding name
+          col = $("<td></td>");
+          input = $('<input/>', {
+            class: "input",
+            type: "text",
+            id: `${ value["id"] }-datatable`,
+            value: `${ value["brand_name"]}`,
+          });
+          col.append(input);
+          row.append(col);
+
+          // adding id
+          col = $("<td></td>").text(value["id"]);
+          row.append(col);
+
+
+          // add value to the table
+          $("#datatable").append(row);
+
+        });
+      }
+    });
+
+  }
+  // need to check databse for data
+  $(document).ready(function () {
+    console.log("brand upload loading");
+    load_data_table();
+  });
+
+
+  $("#brand_submit").click(function () {
+    logo_data = $("#brand_image")[0].files[0];
+    brand_name = $("#brand_name").val();
+
+    console.log("brand name ", brand_name);
+    console.log("brand image ", logo_data);
+
+    formData = new FormData();
+
+    // add brand name
+    formData.append("brand_name", brand_name);
+    // add brand logo file
+    formData.append("brand_logo", logo_data);
+    
+    $.ajax({
+      url: "/static/admin/brand_upload.php",
+      type: "POST",
+      data: formData,
+      processData: false,
+      cache: false,
+      contentType: false,
+      success: function (result) {
+
+        result = JSON.parse(result);
+        console.log("done succefully ", result.brand_name, "img_Sr ", result.img_src);
+        save_brand_data(result.brand_name, result.img_src);
+      },
+      error: function (result) {
+        console.log("Error ", result);
+      }
+    });
+
+
+    function save_brand_data(name, src) {
+
+      formData = new FormData();
+      formData.append("brand_name", name);
+      formData.append("img_src", src);
+      $.ajax({
+        url: "/api/save/brand_info",
+        type: "POST",
+        dataType: "json",
+        data: formData,
+        processData: false,
+        cache: false,
+        contentType: false,
+        success: function (result) {
+          console.log("done succefully post data ", result)
+          load_data_table();
+        },
+        error: function (result) {
+          console.log("Error ", result);
+        }
+      });
+    }
+
+
+
+
+  });
+</script>
+<!-- *********** DATABSE********************** -->
+
+
+
+<!-- pugin -->
 <script src="assets/js/vendors.js"></script>
 
 <!-- custom app -->
@@ -277,3 +397,72 @@
   fileUpload();
   removeFile();
 </script>
+
+
+
+<script>
+
+
+
+  $("#export_csv").click(function () {
+
+    console.log("load cs");
+
+    rows = document.getElementsByTagName('tr');
+
+     cells ="";
+     csv = "";
+
+     csvSeparator = ";"; // Sets the separator between fields
+     quoteField = true; // Adds quotes around fields
+
+     regex = /.*<img.*src="(.*?)"/i
+
+    for ( row = 0; row < rows.length; row++) {
+      cells = rows[row].getElementsByTagName('td');
+      if (cells.length === 0) {
+        cells = rows[row].getElementsByTagName('th');
+      }
+      for (var cell = 0; cell < cells.length; cell++) {
+        if (quoteField) {
+          csv += '"';
+        }
+
+        if (regex.test(cells[cell].innerHTML)) {
+          csv += cells[cell].innerHTML.match(regex)[1];
+        } else {
+          csv += cells[cell].innerText;
+        }
+
+        if (quoteField) {
+          csv += '"';
+        }
+
+        if (cell === cells.length - 1) {
+          csv += "\n";
+        } else {
+          csv += csvSeparator;
+        }
+      }
+    }
+    content = csv;
+    const a = document.createElement('a');
+    const file = new Blob([content], {
+      type: 'text/plain'
+    });
+
+    a.href = URL.createObjectURL(file);
+    a.download = "csv-export.csv";
+
+    // To generate a link, use this:
+    a.innerHTML = "Download CSV";
+    // document.body.appendChild(a);
+
+    // If you want to automatically download then use this instead:
+
+    a.click();
+    URL.revokeObjectURL(a.href);
+
+  });
+</script>
+<!-- text download  -->
