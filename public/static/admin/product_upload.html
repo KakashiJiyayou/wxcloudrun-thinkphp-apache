@@ -380,6 +380,7 @@
   //@ sku end
 
   $("#submit_data").click(function () {
+    $("#submit_data").attr("disabled", true);
     var formDATA = new FormData();
     // $.each($("#upload-files").files, function(key, value){
     //       console.log("key ", key, "value ",value , "name ") ;
@@ -424,9 +425,13 @@
       success: function (result) {
         console.log("done succefully ", result);
         alert("uploaded product done");
+        
+      $("#submit_data").attr("disabled", false);
       },
       error: function (result) {
         console.log("Error ", result);
+        
+      $("#submit_data").attr("disabled", false);
       }
     });
 
