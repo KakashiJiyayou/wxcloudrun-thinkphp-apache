@@ -28,7 +28,7 @@ Route::get ("/api/get_home_product_type",'test/home_product_type');
 
 
 
-
+ 
  
 Route::get("/api/get_user_id", "getid/get_code");
 
